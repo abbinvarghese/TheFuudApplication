@@ -7,15 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C7F1B96DE7FA50D721C73FE /* libPods-TheFuudApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643E4CEF4C4CBC8A6A5FBF7D /* libPods-TheFuudApplication.a */; };
+		ED1A8E471D19125600417477 /* TFAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A8E461D19125600417477 /* TFAConstants.m */; };
+		ED2697601D184C6F00CEB79E /* TFAFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */; };
 		ED91D0791D16925400EBE753 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0781D16925400EBE753 /* main.m */; };
 		ED91D07C1D16925400EBE753 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D07B1D16925400EBE753 /* AppDelegate.m */; };
 		ED91D07F1D16925400EBE753 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D07E1D16925400EBE753 /* ViewController.m */; };
 		ED91D0821D16925400EBE753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0801D16925400EBE753 /* Main.storyboard */; };
 		ED91D0841D16925400EBE753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0831D16925400EBE753 /* Assets.xcassets */; };
 		ED91D0871D16925400EBE753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0851D16925400EBE753 /* LaunchScreen.storyboard */; };
+		ED91D08F1D16ACBB00EBE753 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED91D08E1D16ACBB00EBE753 /* Initial.storyboard */; };
+		ED91D0921D16AE4100EBE753 /* TFAFirstLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0911D16AE4100EBE753 /* TFAFirstLaunchViewController.m */; };
+		ED91D0951D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0941D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.m */; };
+		ED91D0981D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0971D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m */; };
+		ED91D09B1D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D09A1D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.m */; };
+		ED91D09E1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D09D1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.m */; };
+		ED91D0A01D16B67100EBE753 /* IMG_0101.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED91D09F1D16B67100EBE753 /* IMG_0101.mp4 */; };
+		ED91D0A31D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0A21D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m */; };
+		ED91D0A81D17C94900EBE753 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED91D0A51D17C94900EBE753 /* FBSDKCoreKit.framework */; };
+		ED91D0A91D17C94900EBE753 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED91D0A61D17C94900EBE753 /* FBSDKLoginKit.framework */; };
+		ED91D0AA1D17C94900EBE753 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED91D0A71D17C94900EBE753 /* FBSDKShareKit.framework */; };
+		ED91D0AC1D17D35600EBE753 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0AB1D17D35600EBE753 /* GoogleService-Info.plist */; };
+		ED91D0B21D17F25C00EBE753 /* TFAAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0B11D17F25C00EBE753 /* TFAAccountViewController.m */; };
+		ED91D0B41D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0B31D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg */; };
+		ED91D0BB1D1811DF00EBE753 /* TFAAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0BA1D1811DF00EBE753 /* TFAAccountTableViewCell.m */; };
+		ED91D0C01D18270500EBE753 /* TFASignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0BF1D18270500EBE753 /* TFASignInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381E8A03E5792A6131A49A56 /* Pods-TheFuudApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFuudApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheFuudApplication/Pods-TheFuudApplication.release.xcconfig"; sourceTree = "<group>"; };
+		643E4CEF4C4CBC8A6A5FBF7D /* libPods-TheFuudApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheFuudApplication.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1010341D56AE966DD9D3A3C /* Pods-TheFuudApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFuudApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheFuudApplication/Pods-TheFuudApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		ED1A8E441D1910ED00417477 /* TheFuudApplication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheFuudApplication-Prefix.pch"; sourceTree = "<group>"; };
+		ED1A8E451D19125600417477 /* TFAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAConstants.h; sourceTree = "<group>"; };
+		ED1A8E461D19125600417477 /* TFAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAConstants.m; sourceTree = "<group>"; };
+		ED26975E1D184C6F00CEB79E /* TFAFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFeedbackViewController.h; sourceTree = "<group>"; };
+		ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFeedbackViewController.m; sourceTree = "<group>"; };
 		ED91D0741D16925400EBE753 /* TheFuudApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFuudApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED91D0781D16925400EBE753 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED91D07A1D16925400EBE753 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +53,31 @@
 		ED91D0831D16925400EBE753 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED91D0861D16925400EBE753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED91D0881D16925400EBE753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED91D08E1D16ACBB00EBE753 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		ED91D0901D16AE4100EBE753 /* TFAFirstLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFirstLaunchViewController.h; sourceTree = "<group>"; };
+		ED91D0911D16AE4100EBE753 /* TFAFirstLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFirstLaunchViewController.m; sourceTree = "<group>"; };
+		ED91D0931D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFirstLaunchPageOneViewController.h; sourceTree = "<group>"; };
+		ED91D0941D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFirstLaunchPageOneViewController.m; sourceTree = "<group>"; };
+		ED91D0961D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFirstLaunchPageTwoViewController.h; sourceTree = "<group>"; };
+		ED91D0971D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFirstLaunchPageTwoViewController.m; sourceTree = "<group>"; };
+		ED91D0991D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFirstLaunchPageThreeViewController.h; sourceTree = "<group>"; };
+		ED91D09A1D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFirstLaunchPageThreeViewController.m; sourceTree = "<group>"; };
+		ED91D09C1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFirstLaunchPageFourViewController.h; sourceTree = "<group>"; };
+		ED91D09D1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFirstLaunchPageFourViewController.m; sourceTree = "<group>"; };
+		ED91D09F1D16B67100EBE753 /* IMG_0101.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_0101.mp4; sourceTree = "<group>"; };
+		ED91D0A11D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFirstLaunchPageFiveViewController.h; sourceTree = "<group>"; };
+		ED91D0A21D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFirstLaunchPageFiveViewController.m; sourceTree = "<group>"; };
+		ED91D0A51D17C94900EBE753 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = TheFuudApplication/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		ED91D0A61D17C94900EBE753 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = TheFuudApplication/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		ED91D0A71D17C94900EBE753 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = TheFuudApplication/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		ED91D0AB1D17D35600EBE753 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED91D0B01D17F25C00EBE753 /* TFAAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAAccountViewController.h; sourceTree = "<group>"; };
+		ED91D0B11D17F25C00EBE753 /* TFAAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAAccountViewController.m; sourceTree = "<group>"; };
+		ED91D0B31D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2015-12-01-30-12187888_10.eba12.jpg"; sourceTree = "<group>"; };
+		ED91D0B91D1811DF00EBE753 /* TFAAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAAccountTableViewCell.h; sourceTree = "<group>"; };
+		ED91D0BA1D1811DF00EBE753 /* TFAAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAAccountTableViewCell.m; sourceTree = "<group>"; };
+		ED91D0BE1D18270500EBE753 /* TFASignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFASignInViewController.h; sourceTree = "<group>"; };
+		ED91D0BF1D18270500EBE753 /* TFASignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFASignInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +85,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED91D0A91D17C94900EBE753 /* FBSDKLoginKit.framework in Frameworks */,
+				ED91D0A81D17C94900EBE753 /* FBSDKCoreKit.framework in Frameworks */,
+				ED91D0AA1D17C94900EBE753 /* FBSDKShareKit.framework in Frameworks */,
+				5C7F1B96DE7FA50D721C73FE /* libPods-TheFuudApplication.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B4EA6C3835204D66ABF8260 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1010341D56AE966DD9D3A3C /* Pods-TheFuudApplication.debug.xcconfig */,
+				381E8A03E5792A6131A49A56 /* Pods-TheFuudApplication.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C463528D7A7FA798B257C0A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED91D0A51D17C94900EBE753 /* FBSDKCoreKit.framework */,
+				ED91D0A61D17C94900EBE753 /* FBSDKLoginKit.framework */,
+				ED91D0A71D17C94900EBE753 /* FBSDKShareKit.framework */,
+				643E4CEF4C4CBC8A6A5FBF7D /* libPods-TheFuudApplication.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED26975D1D184C5600CEB79E /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				ED26975E1D184C6F00CEB79E /* TFAFeedbackViewController.h */,
+				ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
 		ED91D06B1D16925400EBE753 = {
 			isa = PBXGroup;
 			children = (
 				ED91D0761D16925400EBE753 /* TheFuudApplication */,
 				ED91D0751D16925400EBE753 /* Products */,
+				8B4EA6C3835204D66ABF8260 /* Pods */,
+				C463528D7A7FA798B257C0A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +145,19 @@
 		ED91D0761D16925400EBE753 /* TheFuudApplication */ = {
 			isa = PBXGroup;
 			children = (
+				ED91D0AF1D17F23800EBE753 /* Account */,
+				ED91D0AD1D17F1F200EBE753 /* FirstLaunch */,
 				ED91D07A1D16925400EBE753 /* AppDelegate.h */,
 				ED91D07B1D16925400EBE753 /* AppDelegate.m */,
 				ED91D07D1D16925400EBE753 /* ViewController.h */,
 				ED91D07E1D16925400EBE753 /* ViewController.m */,
 				ED91D0801D16925400EBE753 /* Main.storyboard */,
+				ED91D08E1D16ACBB00EBE753 /* Initial.storyboard */,
 				ED91D0831D16925400EBE753 /* Assets.xcassets */,
 				ED91D0851D16925400EBE753 /* LaunchScreen.storyboard */,
 				ED91D0881D16925400EBE753 /* Info.plist */,
+				ED91D0AB1D17D35600EBE753 /* GoogleService-Info.plist */,
+				ED91D0B31D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg */,
 				ED91D0771D16925400EBE753 /* Supporting Files */,
 			);
 			path = TheFuudApplication;
@@ -74,9 +166,70 @@
 		ED91D0771D16925400EBE753 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED91D09F1D16B67100EBE753 /* IMG_0101.mp4 */,
 				ED91D0781D16925400EBE753 /* main.m */,
+				ED1A8E441D1910ED00417477 /* TheFuudApplication-Prefix.pch */,
+				ED1A8E451D19125600417477 /* TFAConstants.h */,
+				ED1A8E461D19125600417477 /* TFAConstants.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED91D0AD1D17F1F200EBE753 /* FirstLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				ED91D0AE1D17F20300EBE753 /* Pages */,
+				ED91D0901D16AE4100EBE753 /* TFAFirstLaunchViewController.h */,
+				ED91D0911D16AE4100EBE753 /* TFAFirstLaunchViewController.m */,
+			);
+			name = FirstLaunch;
+			sourceTree = "<group>";
+		};
+		ED91D0AE1D17F20300EBE753 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				ED91D0931D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.h */,
+				ED91D0941D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.m */,
+				ED91D0961D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.h */,
+				ED91D0971D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m */,
+				ED91D0991D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.h */,
+				ED91D09A1D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.m */,
+				ED91D09C1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.h */,
+				ED91D09D1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.m */,
+				ED91D0A11D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.h */,
+				ED91D0A21D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
+		ED91D0AF1D17F23800EBE753 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				ED91D0B01D17F25C00EBE753 /* TFAAccountViewController.h */,
+				ED91D0B11D17F25C00EBE753 /* TFAAccountViewController.m */,
+				ED26975D1D184C5600CEB79E /* Feedback */,
+				ED91D0BD1D1826DC00EBE753 /* Sign In */,
+				ED91D0BC1D18131300EBE753 /* Cell */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		ED91D0BC1D18131300EBE753 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED91D0B91D1811DF00EBE753 /* TFAAccountTableViewCell.h */,
+				ED91D0BA1D1811DF00EBE753 /* TFAAccountTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		ED91D0BD1D1826DC00EBE753 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				ED91D0BE1D18270500EBE753 /* TFASignInViewController.h */,
+				ED91D0BF1D18270500EBE753 /* TFASignInViewController.m */,
+			);
+			name = "Sign In";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +239,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED91D08B1D16925400EBE753 /* Build configuration list for PBXNativeTarget "TheFuudApplication" */;
 			buildPhases = (
+				53E0C5BB845C2B18A5FC1B58 /* [CP] Check Pods Manifest.lock */,
 				ED91D0701D16925400EBE753 /* Sources */,
 				ED91D0711D16925400EBE753 /* Frameworks */,
 				ED91D0721D16925400EBE753 /* Resources */,
+				C2CCABCC58B1903782FFB959 /* [CP] Embed Pods Frameworks */,
+				518340B615AFDDA139F41367 /* [CP] Copy Pods Resources */,
+				ED91D0C11D183B5300EBE753 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -105,6 +262,7 @@
 		ED91D06C1D16925400EBE753 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TFA;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Abbin Varghese";
 				TargetAttributes = {
@@ -138,20 +296,96 @@
 			files = (
 				ED91D0871D16925400EBE753 /* LaunchScreen.storyboard in Resources */,
 				ED91D0841D16925400EBE753 /* Assets.xcassets in Resources */,
+				ED91D0B41D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg in Resources */,
 				ED91D0821D16925400EBE753 /* Main.storyboard in Resources */,
+				ED91D0A01D16B67100EBE753 /* IMG_0101.mp4 in Resources */,
+				ED91D08F1D16ACBB00EBE753 /* Initial.storyboard in Resources */,
+				ED91D0AC1D17D35600EBE753 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		518340B615AFDDA139F41367 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheFuudApplication/Pods-TheFuudApplication-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53E0C5BB845C2B18A5FC1B58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2CCABCC58B1903782FFB959 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheFuudApplication/Pods-TheFuudApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED91D0C11D183B5300EBE753 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\n# Replace this path with the path to the key you just downloaded\nJSON_FILE=/Users/abbinvarghese/Desktop/PaadamProjects/TheFuudApplication/TheFuudApplication-4d5063eaa11c.json\n\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:397652634106:ios:72fe937382010895\n\ndefaults write com.google.SymbolUpload version -integer 1   # creates file if it does not exist\nJSON=$(cat \"${JSON_FILE}\")\n/usr/bin/plutil -replace \"app_${GOOGLE_APP_ID//:/_}\" -json \"${JSON}\" \"$HOME/Library/Preferences/com.google.SymbolUpload.plist\"\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED91D0701D16925400EBE753 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED91D09B1D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.m in Sources */,
+				ED91D0981D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m in Sources */,
 				ED91D07F1D16925400EBE753 /* ViewController.m in Sources */,
+				ED91D0A31D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m in Sources */,
+				ED91D0BB1D1811DF00EBE753 /* TFAAccountTableViewCell.m in Sources */,
+				ED2697601D184C6F00CEB79E /* TFAFeedbackViewController.m in Sources */,
 				ED91D07C1D16925400EBE753 /* AppDelegate.m in Sources */,
+				ED1A8E471D19125600417477 /* TFAConstants.m in Sources */,
+				ED91D0C01D18270500EBE753 /* TFASignInViewController.m in Sources */,
+				ED91D0951D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.m in Sources */,
+				ED91D0B21D17F25C00EBE753 /* TFAAccountViewController.m in Sources */,
+				ED91D0921D16AE4100EBE753 /* TFAFirstLaunchViewController.m in Sources */,
 				ED91D0791D16925400EBE753 /* main.m in Sources */,
+				ED91D09E1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -252,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -261,9 +495,17 @@
 		};
 		ED91D08C1D16925400EBE753 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1010341D56AE966DD9D3A3C /* Pods-TheFuudApplication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TheFuudApplication",
+				);
+				GCC_PREFIX_HEADER = "TheFuudApplication/TheFuudApplication-Prefix.pch";
 				INFOPLIST_FILE = TheFuudApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThePaadamCompany.TheFuudApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,9 +514,17 @@
 		};
 		ED91D08D1D16925400EBE753 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 381E8A03E5792A6131A49A56 /* Pods-TheFuudApplication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TheFuudApplication",
+				);
+				GCC_PREFIX_HEADER = "TheFuudApplication/TheFuudApplication-Prefix.pch";
 				INFOPLIST_FILE = TheFuudApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThePaadamCompany.TheFuudApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +550,7 @@
 				ED91D08D1D16925400EBE753 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

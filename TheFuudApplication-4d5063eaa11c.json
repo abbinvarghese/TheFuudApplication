@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "thefuudapplication",
+  "private_key_id": "4d5063eaa11c73219c737ce94a538ccdb93bea26",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCT2PyrVMUMWpZf\nbxCv9+a1jOzZh5/hq1UVb2dITBl2e61ReIVOlybjyrO9C41CoRdFBvkLumbpE9y9\n2wYuVanmmcId3HzjKmk8dHsd7Inrm1JkJhh3Era8uaF7VHgb/lz0h2ZJHwkqEBpd\nluKyY4I6gWkuzqB2uFhwG/0h2nRH/1mRvtImCRlfAZ06k2jjvAcPb8jR2e4/QyuO\nf8nby6duzyOyu74U1KivYSvK7rrD4TNsZvczcUTTenpvwTSmS84ndMh85GhlX4Sn\nVaTwUMI7InwfSFT8IfuYMTva3ecCCx/mN47WfoB8TS4f4fjoE8yktEF0tGsZKB3L\nsJJlYrNDAgMBAAECggEAHentVY0VQWaivjRun+v8lgcpdOnoA3TzBh9AOnSLQlnL\nu4wzDK+wgq5kp39K2YxWdPTwNttELyyBoThLi9xxP+MkT35pFl1iZYT71BYj4bPP\ne8vpb04uAwlcDuQMWT2h+SfcHjdVV1livETnIUjY9JVyfrH37Y1m92fyU4Mru9Uz\nw84mXuua5nUDm6CI1JIBIkbO1GQCRvp2giKcGQ84DFCNP1kjCWav9Ba+HsfPotKG\nSDAv2WhrYbbj/Pq7pCv/xGkRuMnLccuw8kXKu4J4sxnY48Qy7ssVqFOAf7CwS1Bh\negU/4YLIHLIKN4ZXhQb9p8aAsqPaAn+ZBqWfs2dj4QKBgQDD0qBdJo9N0bY7seM8\nAdWwJnZxypr0LeTOs3RmDKdJNu2CxquIBYr/+4TbuXkayqiODAiywoWuJHm4CyHT\ncjA+PoQYWk36t5dH9VPKEMzNJk/GFfAlmvmN4pPlvXF7tt30QkwHgDADywwyJ3v+\ncaAHaegaE1v9KLYBayXTrhMMTQKBgQDBSCfp5UIofZ6W4kQhC7NqXYHaGBp5qaQ4\n70F7NvH/AlpgwBOQIcnTbnXyhQcR1EQhlCNr30TsIVQ017ZNr9QhZLcdS4arizPC\nGg2mpODukGklIbn6CWRE3nGwQHXrBfhVX156xf/XSX/dvsclQeQUo/l5wcncK7kq\nspSpYddFzwKBgEA+kOgep3MzcyMAiHl+bJne9Ir+mnmzuNZrn6t/ST7G64M1JL96\nehDjdsIThnzYshXwMsZa9TqdsuVDmbRiSRuSrQnETsMLinFMNlIb0uUXRaLKPcBI\nqMj45ebAkUOySf1B5umrD5We/wBRXeerZYIpJ8GuSkazHYs3mPBqsssdAoGAANx1\ncRFYbh3BKyLu8sa+kebAwVwCIjCjTq2iOQ5RnbVA+dVhQO8lmw+O7vmwwl+TviKO\n1dg00miDm4iqg0YZR9zPBA5mFzWTkXXUQb3SUr3J+iRgU8De9X+YOhTPcbChHqBC\nJ4HiVe855p8G/B+DCKSCZAx8/cIkHRCWoPqSnvkCgYEAiZZ+p3rNxv1t0YwlE3YG\n7eLJS+mXxjEmuwb/SNPRz3YJifVwjl0SPAz22pfUj5ogX9zqaUZHG10nBTuttdHr\ncnLLqC19kuv2MFrWC6b5GDES7+tr2xhBf2kwurBhdNz7C0sO19DcFDMhqNq6lDM4\ngPaPYdog9zoIvRGfQbqVa/8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "symbol-upload-service-account@thefuudapplication.iam.gserviceaccount.com",
+  "client_id": "110797011335762285667",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/symbol-upload-service-account%40thefuudapplication.iam.gserviceaccount.com"
+}

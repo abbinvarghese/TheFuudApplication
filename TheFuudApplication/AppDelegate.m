@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "TFAFirstLaunchViewController.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -16,8 +20,63 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [FIRApp configure];
+    [FIRDatabase database].persistenceEnabled = YES;
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKLoginButton class];
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+//    
+//    NSError *error;
+//    [[FIRAuth auth] signOut:&error];
+//    if (!error) {
+//        // Sign-out succeeded
+//    }
+    
+    if ([FIRAuth auth].currentUser == nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];
+        TFAFirstLaunchViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TFAFirstLaunchViewController"];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    }
+    else{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    }
+    
     return YES;
+}
+
+-(void)switchToTabBar{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+    self.window.rootViewController = rootViewController;
+
+}
+
+-(void)switchToSignUp{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];
+    TFAFirstLaunchViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TFAFirstLaunchViewController"];
+    self.window.rootViewController = rootViewController;
+    
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<NSString *, id> *)options {
+    return [[FBSDKApplicationDelegate sharedInstance] application:app
+                                                          openURL:url
+                                                sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                       annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -35,7 +94,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

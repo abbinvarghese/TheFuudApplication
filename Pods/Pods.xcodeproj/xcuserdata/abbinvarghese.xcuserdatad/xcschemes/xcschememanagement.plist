@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>JSQMessagesViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TheFuudApplication.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9308FBFAB7AA4B2E1F7E89900FD73EF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B102F209C1FA58D0EB9EA7852A3527E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8551130F76A0255A421B92E7DB95F81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB29775F73446E8B8FEA156DF39FA024</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
