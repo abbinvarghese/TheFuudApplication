@@ -99,10 +99,9 @@
                                       self.view.userInteractionEnabled = YES;
                                       if (error == nil) {
                                           FIRDatabaseReference *ref = [[FIRDatabase database] reference];
-                                          NSString *key = [[ref child:userPath] childByAutoId].key;
                                           NSDictionary *post = @{userIDKey: user.uid,
                                                                  isAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
-                                          NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:key]: post};
+                                          NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:user.uid]: post};
                                           [ref updateChildValues:childUpdates];
                                           AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
                                           [appDelegate switchToTabBar];

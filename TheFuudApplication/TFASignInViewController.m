@@ -157,6 +157,11 @@
                                                   if (error == nil) {
                                                       [_activityIndicator stopAnimating];
                                                       self.view.userInteractionEnabled = YES;
+                                                      FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+                                                      NSDictionary *post = @{userIDKey: user.uid,
+                                                                             isAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
+                                                      NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:user.uid]: post};
+                                                      [ref updateChildValues:childUpdates];
                                                       [self dismissViewControllerAnimated:YES completion:nil];
                                                   }
                                                   else if(error.code == 17025){
@@ -165,6 +170,11 @@
                                                                                     [_activityIndicator stopAnimating];
                                                                                     self.view.userInteractionEnabled = YES;
                                                                                     if (error == nil) {
+                                                                                        FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+                                                                                        NSDictionary *post = @{userIDKey: user.uid,
+                                                                                                               isAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
+                                                                                        NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:user.uid]: post};
+                                                                                        [ref updateChildValues:childUpdates];
                                                                                         [self dismissViewControllerAnimated:YES completion:nil];
                                                                                     }
                                                                                 }];

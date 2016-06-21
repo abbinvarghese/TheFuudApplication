@@ -35,7 +35,7 @@
         }
         else{
             for (id<FIRUserInfo> profile in user.providerData) {
-                self.senderId = profile.uid;
+                self.senderId = user.uid;
                 self.senderDisplayName = profile.displayName;
             }
         }

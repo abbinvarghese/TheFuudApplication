@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C7F1B96DE7FA50D721C73FE /* libPods-TheFuudApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643E4CEF4C4CBC8A6A5FBF7D /* libPods-TheFuudApplication.a */; };
 		ED1A8E471D19125600417477 /* TFAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A8E461D19125600417477 /* TFAConstants.m */; };
+		ED1A8E4B1D19895B00417477 /* TFAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A8E4A1D19895B00417477 /* TFAManager.m */; };
 		ED2697601D184C6F00CEB79E /* TFAFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */; };
 		ED91D0791D16925400EBE753 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0781D16925400EBE753 /* main.m */; };
 		ED91D07C1D16925400EBE753 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D07B1D16925400EBE753 /* AppDelegate.m */; };
@@ -41,6 +42,8 @@
 		ED1A8E441D1910ED00417477 /* TheFuudApplication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheFuudApplication-Prefix.pch"; sourceTree = "<group>"; };
 		ED1A8E451D19125600417477 /* TFAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAConstants.h; sourceTree = "<group>"; };
 		ED1A8E461D19125600417477 /* TFAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAConstants.m; sourceTree = "<group>"; };
+		ED1A8E491D19895B00417477 /* TFAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAManager.h; sourceTree = "<group>"; };
+		ED1A8E4A1D19895B00417477 /* TFAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAManager.m; sourceTree = "<group>"; };
 		ED26975E1D184C6F00CEB79E /* TFAFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFeedbackViewController.h; sourceTree = "<group>"; };
 		ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFeedbackViewController.m; sourceTree = "<group>"; };
 		ED91D0741D16925400EBE753 /* TheFuudApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFuudApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +118,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED1A8E481D19894200417477 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				ED1A8E491D19895B00417477 /* TFAManager.h */,
+				ED1A8E4A1D19895B00417477 /* TFAManager.m */,
+			);
+			name = Modals;
+			sourceTree = "<group>";
+		};
 		ED26975D1D184C5600CEB79E /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +157,7 @@
 		ED91D0761D16925400EBE753 /* TheFuudApplication */ = {
 			isa = PBXGroup;
 			children = (
+				ED1A8E481D19894200417477 /* Modals */,
 				ED91D0AF1D17F23800EBE753 /* Account */,
 				ED91D0AD1D17F1F200EBE753 /* FirstLaunch */,
 				ED91D07A1D16925400EBE753 /* AppDelegate.h */,
@@ -376,6 +389,7 @@
 				ED91D0981D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m in Sources */,
 				ED91D07F1D16925400EBE753 /* ViewController.m in Sources */,
 				ED91D0A31D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m in Sources */,
+				ED1A8E4B1D19895B00417477 /* TFAManager.m in Sources */,
 				ED91D0BB1D1811DF00EBE753 /* TFAAccountTableViewCell.m in Sources */,
 				ED2697601D184C6F00CEB79E /* TFAFeedbackViewController.m in Sources */,
 				ED91D07C1D16925400EBE753 /* AppDelegate.m in Sources */,

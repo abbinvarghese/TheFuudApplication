@@ -23,13 +23,13 @@
     
     [FIRApp configure];
     [FIRDatabase database].persistenceEnabled = YES;
-    
+    application.applicationIconBadgeNumber = 0;
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     [FBSDKLoginButton class];
     
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-//    
+    
 //    NSError *error;
 //    [[FIRAuth auth] signOut:&error];
 //    if (!error) {
@@ -77,6 +77,10 @@
                                                           openURL:url
                                                 sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                                        annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

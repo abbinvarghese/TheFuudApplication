@@ -48,7 +48,6 @@ typedef NS_ENUM(NSInteger, SignOut) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (void)didReceiveMemoryWarning {
