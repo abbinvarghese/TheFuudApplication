@@ -134,8 +134,8 @@
         picker.definesPresentationContext = YES;
         picker.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         [self presentViewController:picker
-                          animated:YES
-                        completion:NULL];
+                           animated:YES
+                         completion:NULL];
     }
 }
 

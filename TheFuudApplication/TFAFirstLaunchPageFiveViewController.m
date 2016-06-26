@@ -77,7 +77,7 @@
     
     self.noAccountButton.titleLabel.font = [UIFont fontWithName:fontname size:[UIScreen mainScreen].bounds.size.width/25];
     self.textLabel.attributedText = hogan;
-
+    
 }
 
 - (void)didReceiveMemoryWarning {

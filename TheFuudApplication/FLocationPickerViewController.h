@@ -18,6 +18,7 @@
 
 @end
 
+
 @interface FLocationPickerViewController : UIViewController<UISearchBarDelegate,GMSAutocompleteFetcherDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) id <FLocationPickerDelegate> delegate;

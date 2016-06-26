@@ -15,12 +15,14 @@
 @interface FGalleryViewControllers ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
+
 @property (nonatomic, strong) NSArray *sectionFetchResults;
 @property (nonatomic, strong) NSMutableArray *selectedindexs;
 @property (nonatomic, strong) NSMutableArray *selectedPHAsset;
 @property (nonatomic, strong) NSMutableArray *selectedImage;
 @property (nonatomic, strong) PHCachingImageManager *imageManager;
 @property (nonatomic, strong) PHFetchResult *assetsFetchResults;
+
 @property CGRect previousPreheatRect;
 
 @end
@@ -42,7 +44,7 @@ CGSize AssetGridThumbnailSize;
     self.navigationItem.rightBarButtonItem = rightButton;
     
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
-                                                                    style:UIBarButtonItemStylePlain target:self action:@selector(dismiss:)];
+                                                                   style:UIBarButtonItemStylePlain target:self action:@selector(dismiss:)];
     self.navigationItem.leftBarButtonItem = leftButton;
     
     self.selectedindexs = [[NSMutableArray alloc]init];
@@ -100,35 +102,6 @@ CGSize AssetGridThumbnailSize;
     [self updateCachedAssets];
 }
 
-- (IBAction)dismiss:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-}
-
-- (IBAction)next:(UIBarButtonItem *)sender {
-    [self.selectedImage removeAllObjects];
-    for (PHAsset *asset in self.selectedPHAsset) {
-        [self.imageManager requestImageDataForAsset:asset
-                                            options:nil
-                                      resultHandler:^(NSData * _Nullable imageData,
-                                                      NSString * _Nullable dataUTI,
-                                                      UIImageOrientation orientation,
-                                                      NSDictionary * _Nullable info) {
-                                          
-                                          UIImage *image = [UIImage imageWithData:imageData];
-                                          
-                                          [self.selectedImage addObject:image];
-                                          
-                                          if (self.selectedImage.count == self.selectedPHAsset.count) {
-                                              TFANameAndPriceTableViewController *controller = [[TFANameAndPriceTableViewController alloc]initWithNibName:@"TFANameAndPriceTableViewController" bundle:[NSBundle mainBundle]];
-                                              controller.selectedImage = self.selectedImage;
-                                              [self.navigationController pushViewController:controller animated:YES];
-                                          }
-                                      }];
-    }
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -143,7 +116,12 @@ CGSize AssetGridThumbnailSize;
     [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
 }
 
-#pragma mark <UICollectionViewDataSource>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UICollectionView DataSource -
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -191,6 +169,13 @@ CGSize AssetGridThumbnailSize;
     return cell;
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UICollectionView Delegate -
+
+
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake([UIScreen mainScreen].bounds.size.width/3-2, [UIScreen mainScreen].bounds.size.width/3-2);
 }
@@ -225,34 +210,27 @@ CGSize AssetGridThumbnailSize;
             [self.selectedPHAsset addObject:[self.assetsFetchResults objectAtIndex:indexPath.row]];
         }
     }
-
+    
 }
 
--(void)resetViewContoller{
-    [self.selectedindexs removeAllObjects];
-    [self initSelectedIndexArrayWithCount:self.assetsFetchResults.count];
-    [self.selectedPHAsset removeAllObjects];
-    [self.selectedImage removeAllObjects];
-    [self.photoCollectionView reloadData];
-}
 
--(void)initSelectedIndexArrayWithCount:(NSInteger)count{
-    if (self.selectedindexs == nil) {
-        self.selectedindexs = [[NSMutableArray alloc]init];
-    }
-    for (int i = 0; i<count; i++) {
-        [self.selectedindexs addObject:[NSNumber numberWithBool:NO]];
-    }
-}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#pragma mark - UIScrollViewDelegate
+
+#pragma mark - UIScrollView Delegate -
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Update cached assets for the new visible area.
     [self updateCachedAssets];
 }
 
-#pragma mark - Asset Caching
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - Asset Caching -
+
 
 - (void)resetCachedAssets {
     [self.imageManager stopCachingImagesForAllAssets];
@@ -349,6 +327,12 @@ CGSize AssetGridThumbnailSize;
 }
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - PHPhotoLibrary Delegate -
+
+
 - (void)photoLibraryDidChange:(PHChange *)changeInstance {
     /*
      Change notifications may be made on a background queue. Re-dispatch to the
@@ -379,5 +363,65 @@ CGSize AssetGridThumbnailSize;
         
     });
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - Actions -
+
+- (void)dismiss:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+- (void)next:(UIBarButtonItem *)sender {
+    [self.selectedImage removeAllObjects];
+    for (PHAsset *asset in self.selectedPHAsset) {
+        [self.imageManager requestImageDataForAsset:asset
+                                            options:nil
+                                      resultHandler:^(NSData * _Nullable imageData,
+                                                      NSString * _Nullable dataUTI,
+                                                      UIImageOrientation orientation,
+                                                      NSDictionary * _Nullable info) {
+                                          
+                                          UIImage *image = [UIImage imageWithData:imageData];
+                                          
+                                          [self.selectedImage addObject:image];
+                                          
+                                          if (self.selectedImage.count == self.selectedPHAsset.count) {
+                                              TFANameAndPriceTableViewController *controller = [[TFANameAndPriceTableViewController alloc]initWithNibName:@"TFANameAndPriceTableViewController" bundle:[NSBundle mainBundle]];
+                                              controller.selectedImage = self.selectedImage;
+                                              [self.navigationController pushViewController:controller animated:YES];
+                                          }
+                                      }];
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - Utility Methods -
+
+
+-(void)resetViewContoller{
+    [self.selectedindexs removeAllObjects];
+    [self initSelectedIndexArrayWithCount:self.assetsFetchResults.count];
+    [self.selectedPHAsset removeAllObjects];
+    [self.selectedImage removeAllObjects];
+    [self.photoCollectionView reloadData];
+}
+
+-(void)initSelectedIndexArrayWithCount:(NSInteger)count{
+    if (self.selectedindexs == nil) {
+        self.selectedindexs = [[NSMutableArray alloc]init];
+    }
+    for (int i = 0; i<count; i++) {
+        [self.selectedindexs addObject:[NSNumber numberWithBool:NO]];
+    }
+}
+
 
 @end

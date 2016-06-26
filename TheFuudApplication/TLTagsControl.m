@@ -347,14 +347,14 @@
         UITableView *tableView = (UITableView *)view;
         UIViewController *viewCon = (UIViewController*)tableView.dataSource;
         [viewCon presentViewController:alert animated:YES completion:nil];
-}
+    }
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    if (textField.text.length > 0) {
-//        NSString *tag = textField.text;
-//        textField.text = @"";
-//        [self addTag:tag];
-//    }
+    //    if (textField.text.length > 0) {
+    //        NSString *tag = textField.text;
+    //        textField.text = @"";
+    //        [self addTag:tag];
+    //    }
     
     return YES;
 }
@@ -362,8 +362,8 @@
 //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 //    NSString *resultingString;
 //    NSString *text = textField.text;
-//    
-//    
+//
+//
 //    if (string.length == 1 && [string rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location != NSNotFound) {
 //        return NO;
 //    } else {
@@ -373,13 +373,13 @@
 //            if (range.location + range.length > text.length) {
 //                range.length = text.length - range.location;
 //            }
-//            
+//
 //            resultingString = [textField.text stringByReplacingCharactersInRange:range
 //                                                                      withString:string];
 //        }
-//        
+//
 //        NSArray *components = [resultingString componentsSeparatedByCharactersInSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]];
-//        
+//
 //        if (components.count > 2) {
 //            for (NSString *component in components) {
 //                if (component.length > 0 && [component rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location == NSNotFound) {
@@ -387,10 +387,10 @@
 //                    break;
 //                }
 //            }
-//            
+//
 //            return NO;
 //        }
-//        
+//
 //        return YES;
 //    }
 //}
@@ -410,8 +410,8 @@
 }
 
 - (void)gestureAction:(id)sender {
-//    UITapGestureRecognizer *tapRecognizer = (UITapGestureRecognizer *)sender;
-//    [tapDelegate tagsControl:self tappedAtIndex:tapRecognizer.view.tag];
+    //    UITapGestureRecognizer *tapRecognizer = (UITapGestureRecognizer *)sender;
+    //    [tapDelegate tagsControl:self tappedAtIndex:tapRecognizer.view.tag];
 }
 
 @end

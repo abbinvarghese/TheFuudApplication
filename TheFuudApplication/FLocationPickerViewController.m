@@ -10,12 +10,14 @@
 #import "NSMutableDictionary+TFALocation.h"
 
 @interface FLocationPickerViewController ()
+
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) GMSAutocompleteFetcher *fetcher;
-@property (strong, nonatomic) NSArray *listArray;
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+@property (strong, nonatomic) GMSAutocompleteFetcher *fetcher;
+@property (strong, nonatomic) NSArray *listArray;
 
 @end
 
@@ -23,15 +25,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.label.text = @"";
+    
     GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
     NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     filter.country = countryCode;
     filter.type = kGMSPlacesAutocompleteTypeFilterNoFilter;
-    self.fetcher = [[GMSAutocompleteFetcher alloc] initWithBounds:nil
-                                                       filter:filter];
+    self.fetcher = [[GMSAutocompleteFetcher alloc] initWithBounds:nil filter:filter];
     self.fetcher.delegate = self;
+    
     [_listTableView registerNib:[UINib nibWithNibName:@"TFACurrentLocationTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"TFACurrentLocationTableViewCell"];
 }
 
@@ -45,19 +47,63 @@
     [self.searchBar becomeFirstResponder];
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UISearchBar Delegate -
+
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     self.label.text = @"";
     [self.activityIndicator startAnimating];
     [self.fetcher sourceTextHasChanged:searchText];
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UITableView DataSource -
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.listArray.count+1;
 }
 
-- (IBAction)dismissButtonClicked:(UIButton *)sender {
-    [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        TFACurrentLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TFACurrentLocationTableViewCell"];
+        return cell;
+    }
+    else{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCellID"];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCellID"];
+        }
+        GMSAutocompletePrediction *prediction = [self.listArray objectAtIndex:indexPath.row-1];
+        cell.textLabel.attributedText = prediction.attributedPrimaryText;
+        cell.detailTextLabel.attributedText = prediction.attributedSecondaryText;
+        cell.textLabel.textColor = [UIColor darkTextColor];
+        cell.detailTextLabel.textColor = [UIColor darkTextColor];
+        cell.backgroundColor = [UIColor clearColor];
+        
+        return cell;
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UITableView Delegate -
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [UIScreen mainScreen].bounds.size.height/10;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -72,9 +118,9 @@
                 NSMutableDictionary *obj = [[NSMutableDictionary alloc]initWithGMSPlace:place];
                 [_activityIndicator stopAnimating];
                 [self dismissViewControllerAnimated:YES completion:^{
-                if ([self.delegate respondsToSelector:@selector(FLocationPicker:didFinishPickingPlace:)]) {
-                    [self.delegate FLocationPicker:self didFinishPickingPlace:obj];
-                }
+                    if ([self.delegate respondsToSelector:@selector(FLocationPicker:didFinishPickingPlace:)]) {
+                        [self.delegate FLocationPicker:self didFinishPickingPlace:obj];
+                    }
                 }];
             }
             else{
@@ -112,38 +158,16 @@
     }
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.listArray.count+1;
-}
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        TFACurrentLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TFACurrentLocationTableViewCell"];
-        return cell;
-    }
-    else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCellID"];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCellID"];
-        }
-        GMSAutocompletePrediction *prediction = [self.listArray objectAtIndex:indexPath.row-1];
-        cell.textLabel.attributedText = prediction.attributedPrimaryText;
-        cell.detailTextLabel.attributedText = prediction.attributedSecondaryText;
-        cell.textLabel.textColor = [UIColor darkTextColor];
-        cell.detailTextLabel.textColor = [UIColor darkTextColor];
-        cell.backgroundColor = [UIColor clearColor];
-        
-        return cell;
-    }
-}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [UIScreen mainScreen].bounds.size.height/10;
-}
+
+#pragma mark - GMSAutocompleteFetcher Delegate -
+
 
 - (void)didAutocompleteWithPredictions:(NSArray *)predictions {
     [self.activityIndicator stopAnimating];
-
+    
     if (predictions.count>0) {
         self.label.text = @"";
     }
@@ -156,6 +180,18 @@
 
 - (void)didFailAutocompleteWithError:(NSError *)error {
     self.label.text = @"No results found";
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - Actions -
+
+
+- (IBAction)dismissButtonClicked:(UIButton *)sender {
+    [self.view endEditing:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

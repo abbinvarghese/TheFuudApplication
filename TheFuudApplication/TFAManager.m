@@ -234,10 +234,10 @@
                 [ref updateChildValues:childUpdates];
                 
                 NSLog(@"All Uploads Finished");
-
+                
             }
         }];
-
+        
     });
     
 }

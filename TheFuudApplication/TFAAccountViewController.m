@@ -13,6 +13,7 @@
 #import "TFAEditProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 @import Firebase;
 
 #define YOUR_APP_STORE_ID 284882215 //Change this one to your ID
@@ -60,6 +61,13 @@ static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/ap
     }];
     [_accountTableview reloadData];
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UITableView DataSource -
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([FIRAuth auth].currentUser.isAnonymous) {
@@ -151,6 +159,13 @@ static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/ap
     }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - UITableView Delegate -
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
@@ -221,6 +236,12 @@ static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/ap
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#pragma mark - Actions -
 
 -(void)signOut{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];

@@ -37,6 +37,7 @@
                 <constraint firstAttribute="bottom" secondItem="WuX-kS-FIs" secondAttribute="bottom" id="PrG-lo-sII"/>
                 <constraint firstItem="WuX-kS-FIs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RX4-Q5-0Ln"/>
             </constraints>
+            <point key="canvasLocation" x="180" y="290"/>
         </view>
     </objects>
 </document>
