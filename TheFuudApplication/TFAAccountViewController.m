@@ -7,9 +7,10 @@
 //
 
 #import "TFAAccountViewController.h"
-#import "TFAAccountTableViewCell.h"
 #import "TFASignInViewController.h"
 #import "AppDelegate.h"
+#import "TFAFeedbackViewController.h"
+#import "TFAEditProfileViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @import Firebase;
@@ -17,30 +18,11 @@
 #define YOUR_APP_STORE_ID 284882215 //Change this one to your ID
 static NSString *const iOS7AppStoreURLFormat = @"itms-apps://itunes.apple.com/app/id%d";
 
-typedef NS_ENUM(NSInteger, TableViewSection) {
-    ProfileSection,
-    ConnectSection,
-    OthersSection,
-    SignOutSection
-};
-
-typedef NS_ENUM(NSInteger, ProfileRow) {
-    FindFriendsListRow
-};
-
-typedef NS_ENUM(NSInteger, OthersRow) {
-    AppstoreRow,
-    FeedbackRow,
-    AboutRow,
-};
-
-typedef NS_ENUM(NSInteger, SignOut) {
-    SignOutRow
-};
-
 @interface TFAAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *accountTableview;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageview;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -55,94 +37,110 @@ typedef NS_ENUM(NSInteger, SignOut) {
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _profileImageview.layer.cornerRadius = _profileImageview.frame.size.height/2;
+    _profileImageview.layer.masksToBounds = YES;
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
+                                                    FIRUser *_Nullable user) {
+        if (user != nil && !user.isAnonymous){
+            for (id<FIRUserInfo> profile in user.providerData) {
+                NSString *name = profile.displayName;
+                NSURL *photoURL = profile.photoURL;
+                [_profileImageview sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Profile Placeholder"]];
+                _nameLabel.text = name;
+            }
+        }else {
+            _nameLabel.text = @"No User signed in";
+        }
+    }];
     [_accountTableview reloadData];
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([FIRAuth auth].currentUser.isAnonymous) {
-        return 3;
-    }
-    else{
         return 4;
     }
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    switch (section) {
-        case ProfileSection:{
-            return 1;
-        }
-            break;
-        case ConnectSection:{
-            return 1;
-        }
-            break;
-        case OthersSection:{
-            return 3;
-        }
-            break;
-        case SignOutSection:{
-            return 1;
-        }
-            break;
-            
-        default:
-            return 0;
-            break;
+    else{
+        return 7;
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    TFAAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TFAAccountTableViewCell"];
-    switch (indexPath.section) {
-        case ProfileSection:{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AccountCell"];
+    switch (indexPath.row) {
+        case 0:{
             if ([FIRAuth auth].currentUser.isAnonymous) {
-                cell.cellImageView.image = [UIImage imageNamed:@"Profile Placeholder"];
-                cell.cellLabel.text = @"Sign In";
-            }
-            else{
-                for (id<FIRUserInfo> profile in [FIRAuth auth].currentUser.providerData) {
-                    NSString *name = profile.displayName;
-                    NSURL *photoURL = profile.photoURL;
-                    [cell.cellImageView sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Profile Placeholder"]];
-                    cell.cellLabel.text = name;
-                }
-                
-                
-            }
-            cell.cellLabel.font = [UIFont fontWithName:@".SFUIDisplay-Light" size:20];
-            return cell;
-        }
-            break;
-        case ConnectSection:{
-            cell.cellImageView.image = [UIImage imageNamed:@"FriendsList"];
-            cell.cellLabel.text = @"Find people on The Fuud Application";
-            return cell;
-        }
-            break;
-        case OthersSection:{
-            if (indexPath.row == AppstoreRow) {
-                cell.cellImageView.image = [UIImage imageNamed:@"Appstore"];
-                cell.cellLabel.text = @"Rate us on the AppStore";
-                return cell;
-            }
-            else if (indexPath.row == FeedbackRow){
-                cell.cellImageView.image = [UIImage imageNamed:@"FeedBack"];
-                cell.cellLabel.text = @"Send us a feedback";
+                cell.imageView.image = [UIImage imageNamed:@"Sign In"];
+                cell.textLabel.text = @"Sign In";
                 return cell;
             }
             else{
-                cell.cellImageView.image = [UIImage imageNamed:@"About"];
-                cell.cellLabel.text = @"About us";
+                cell.imageView.image = [UIImage imageNamed:@"Edit profile"];
+                cell.textLabel.text = @"Edit profile";
                 return cell;
             }
         }
             break;
-        case SignOutSection:{
-            cell.cellImageView.image = [UIImage imageNamed:@"Sign out"];
-            cell.cellLabel.text = @"Sign out";
+        case 1:{
+            if ([FIRAuth auth].currentUser.isAnonymous) {
+                cell.imageView.image = [UIImage imageNamed:@"Appstore"];
+                cell.textLabel.text = @"Rate us on the AppStore";
+                return cell;
+            }
+            else{
+                cell.imageView.image = [UIImage imageNamed:@"Firends list"];
+                cell.textLabel.text = @"Firends list";
+                return cell;
+            }
+        }
+            break;
+            
+        case 2:{
+            if ([FIRAuth auth].currentUser.isAnonymous) {
+                cell.imageView.image = [UIImage imageNamed:@"FeedBack"];
+                cell.textLabel.text = @"Send us a feedback";
+                return cell;
+            }
+            else{
+                cell.imageView.image = [UIImage imageNamed:@"Find Friends"];
+                cell.textLabel.text = @"Find new friends";
+                return cell;
+            }
+        }
+            break;
+        case 3:{
+            if ([FIRAuth auth].currentUser.isAnonymous) {
+                cell.imageView.image = [UIImage imageNamed:@"About"];
+                cell.textLabel.text = @"About";
+                return cell;
+            }
+            else{
+                cell.imageView.image = [UIImage imageNamed:@"Appstore"];
+                cell.textLabel.text = @"Rate us on the AppStore";
+                return cell;
+            }
+        }
+            break;
+        case 4:{
+            cell.imageView.image = [UIImage imageNamed:@"FeedBack"];
+            cell.textLabel.text = @"Send us a feedback";
+            return cell;
+        }
+            break;
+        case 5:{
+            cell.imageView.image = [UIImage imageNamed:@"About"];
+            cell.textLabel.text = @"About";
+            return cell;
+        }
+            break;
+        case 6:{
+            cell.imageView.image = [UIImage imageNamed:@"Sign out"];
+            cell.textLabel.text = @"Sign out";
             return cell;
         }
             break;
@@ -151,17 +149,38 @@ typedef NS_ENUM(NSInteger, SignOut) {
             return cell;
             break;
     }
-    
-    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.section) {
-        case ProfileSection:{
+    switch (indexPath.row) {
+        case 0:{
             if ([FIRAuth auth].currentUser.isAnonymous) {
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];
                 TFASignInViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TFASignInViewController"];
+                [self presentViewController:vc animated:YES completion:nil];
+            }
+            else{
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                TFAEditProfileViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TFAEditProfileViewController"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+            break;
+        case 1:{
+            if ([FIRAuth auth].currentUser.isAnonymous) {
+                NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:iOS7AppStoreURLFormat, YOUR_APP_STORE_ID]];
+                [[UIApplication sharedApplication] openURL:url];
+            }
+            else{
+                
+            }
+        }
+            break;
+        case 2:{
+            if ([FIRAuth auth].currentUser.isAnonymous) {
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TFAFeedbackViewController"];
                 [self presentViewController:vc animated:YES completion:nil];
             }
             else{
@@ -169,30 +188,27 @@ typedef NS_ENUM(NSInteger, SignOut) {
             }
         }
             break;
-        case ConnectSection:{
-            
-        }
-            break;
-        case OthersSection:{
-            switch (indexPath.row) {
-                case AppstoreRow:{
-                    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:iOS7AppStoreURLFormat, YOUR_APP_STORE_ID]];
-                    [[UIApplication sharedApplication] openURL:url];
-                }
-                    break;
-                case FeedbackRow:{
-                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TFAFeedbackViewController"];
-                    [self presentViewController:vc animated:YES completion:nil];
-                }
-                    break;
-                    
-                default:
-                    break;
+        case 3:{
+            if ([FIRAuth auth].currentUser.isAnonymous) {
+                
+            }
+            else{
+                NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:iOS7AppStoreURLFormat, YOUR_APP_STORE_ID]];
+                [[UIApplication sharedApplication] openURL:url];
             }
         }
             break;
-        case SignOutSection:{
+        case 4:{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TFAFeedbackViewController"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+            break;
+        case 5:{
+            
+        }
+            break;
+        case 6:{
             [self signOut];
         }
             break;
@@ -202,47 +218,8 @@ typedef NS_ENUM(NSInteger, SignOut) {
     }
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    switch (section) {
-        case ProfileSection:{
-            return @"Profile";
-        }
-            break;
-        case ConnectSection:{
-            return @"Connections";
-        }
-            break;
-        case OthersSection:{
-            return @"Others";
-        }
-            break;
-        case SignOutSection:{
-            return @"Sign out";
-        }
-            break;
-            
-        default:
-            return 0;
-            break;
-    }
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.section) {
-        case ProfileSection:{
-            return 88;
-        }
-            break;
-        case ConnectSection:
-        case OthersSection:
-        case SignOutSection:{
-            return 44;
-        }
-            break;
-        default:
-            return 0;
-            break;
-    }
+    return 50;
 }
 
 -(void)signOut{

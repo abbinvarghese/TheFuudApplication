@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DBB906F6AA7B3AD02FB9A6670767AC03861A4374",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DBB906F6AA7B3AD02FB9A6670767AC03861A4374" : 0,
+    "76CA039D23E45253CFE9EF150C82F62C374C031C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "74A09DAD-7260-40D0-834D-A66AEBC9F5BE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DBB906F6AA7B3AD02FB9A6670767AC03861A4374" : "TheFuudApplication\/",
+    "76CA039D23E45253CFE9EF150C82F62C374C031C" : "Foodu\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TheFuudApplication",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TheFuudApplication.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/abbinvarghese\/Foodu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "76CA039D23E45253CFE9EF150C82F62C374C031C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/abbinvarghese\/TheFuudApplication.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DBB906F6AA7B3AD02FB9A6670767AC03861A4374"
+    }
+  ]
+}

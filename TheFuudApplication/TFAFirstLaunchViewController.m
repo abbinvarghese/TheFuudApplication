@@ -56,6 +56,10 @@
 
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //  CGFloat percentage = scrollView.contentOffset.x;
     //  NSDictionary* userInfo = @{@"adustment": @(percentage)};

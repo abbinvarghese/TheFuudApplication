@@ -4,12 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AMPopTip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JTMaterialSwitch-JTMaterialSwitch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JTMaterialSwitch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,6 +42,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>023246836F35F9B8570099A1E68169E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A1EEBDFB3E64DCD535EDFACC8FE6F14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>16008ED13233401902A758C1FC83B95D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>398D0368A1F649648BB99BB4AE341A1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9308FBFAB7AA4B2E1F7E89900FD73EF0</key>
 		<dict>
 			<key>primary</key>
@@ -37,12 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8551130F76A0255A421B92E7DB95F81</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BB29775F73446E8B8FEA156DF39FA024</key>
+		<key>E8D2C3DF85FF961919C757938DC25B78</key>
 		<dict>
 			<key>primary</key>
 			<true/>

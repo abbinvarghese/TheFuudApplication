@@ -8,6 +8,7 @@
 
 #import "TFAFeedbackViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+
 @import Firebase;
 
 @interface TFAFeedbackViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -19,11 +20,6 @@
 @end
 
 @implementation TFAFeedbackViewController
-
-- (IBAction)dismiss:(UIBarButtonItem *)sender {
-    [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,7 +39,7 @@
     
     JSQMessagesBubbleImageFactory *factory = [JSQMessagesBubbleImageFactory new];
     _outgoingBubbleImageView = [factory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleBlueColor]];
-    _incomingBubbleImageView = [factory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
+    _incomingBubbleImageView = [factory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
     
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
@@ -56,17 +52,22 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self.inputToolbar.contentView.textView becomeFirstResponder];
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - JSQMessages DataSourse -
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return [self.messages count];
 }
 
 -(id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
     return _messages[indexPath.item];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [self.messages count];
+- (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
 }
 
 - (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,10 +78,6 @@
     else{
         return _incomingBubbleImageView;
     }
-}
-
-- (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
 }
 
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -96,46 +93,28 @@
     return cell;
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - JSQMessages Delegate -
+
+
 - (void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date{
     FIRDatabaseReference *ref = [[FIRDatabase database] reference];
     
-    NSString *key = [[ref child:messagesPath] childByAutoId].key;
+    NSString *key = [[ref child:messagesPathKey] childByAutoId].key;
     NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:
-                          text,textKey,
+                          text,feedbackTextKey,
                           senderId,userIDKey, nil];
     
-    NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@/%@",senderId,messagesPath,key]]: post,
-                                   [@"/Feedbacks/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@",senderId,key]]: post};
+    NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@/%@",senderId,messagesPathKey,key]]: post,
+                                   [@"/feedbacks/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@",senderId,key]]: post};
     
     [ref updateChildValues:childUpdates];
     
     [JSQSystemSoundPlayer jsq_playMessageSentSound];
     
     [self finishSendingMessage];
-}
-
--(void)observeMessages{
-    FIRDatabaseReference *ref = [[[[[FIRDatabase database] reference] child:userPath] child:self.senderId]child:messagesPath];
-    [ref keepSynced:YES];
-    [ref observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        NSString *sendID = snapshot.value[userIDKey];
-        NSString *text = snapshot.value[textKey];
-        NSString *fileURL = snapshot.value[fileURLKey];
-        [self addMessage:sendID text:text url:fileURL];
-        [self finishReceivingMessage];
-    }];
-}
-
--(void)addMessage:(NSString*)sendID text:(NSString*)text url:(NSString*)url{
-    if (url == nil) {
-        JSQMessage *messages = [JSQMessage messageWithSenderId:sendID displayName:@"" text:text];
-        
-        [JSQMessage messageWithSenderId:@"" displayName:@"" text:text];
-        if (_messages == nil) {
-            _messages = [NSMutableArray new];
-        }
-        [_messages addObject:messages];
-    }
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender{
@@ -148,6 +127,12 @@
     }];
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - UIImagePickerController Delegate -
+
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:nil];
 
@@ -157,7 +142,7 @@
         NSURL *videoUrl=(NSURL*)[info objectForKey:UIImagePickerControllerMediaURL];
          NSData *videoData = [NSData dataWithContentsOfURL:videoUrl];
         
-        FIRStorageReference *storageRef = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@feedback/%@",databasePath,[self uuid]]];
+        FIRStorageReference *storageRef = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@feedback/%@",storagePathKey,[self uuid]]];
         
         FIRStorageMetadata *metadata = [[FIRStorageMetadata alloc] init];
         metadata.contentType = @"video/mov";
@@ -174,14 +159,14 @@
             
             FIRDatabaseReference *ref = [[FIRDatabase database] reference];
             
-            NSString *key = [[ref child:messagesPath] childByAutoId].key;
+            NSString *key = [[ref child:messagesPathKey] childByAutoId].key;
             NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  @"",textKey,
+                                  @"",feedbackTextKey,
                                   self.senderId,userIDKey,
-                                  [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],fileURLKey,nil];
+                                  [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],feedbackFileURLKey,nil];
             
-            NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@/%@",self.senderId,messagesPath,key]]: post,
-                                           [@"/Feedbacks/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@",self.senderId,key]]: post};
+            NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@/%@",self.senderId,messagesPathKey,key]]: post,
+                                           [@"/feedbacks/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@",self.senderId,key]]: post};
             
             [ref updateChildValues:childUpdates];
             
@@ -218,7 +203,7 @@
         UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
         NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
         
-        FIRStorageReference *storageRef = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@feedback/%@",databasePath,[self uuid]]];
+        FIRStorageReference *storageRef = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@feedback/%@",storagePathKey,[self uuid]]];
         
         FIRStorageMetadata *metadata = [[FIRStorageMetadata alloc] init];
         metadata.contentType = @"image/jpeg";
@@ -235,14 +220,14 @@
             
             FIRDatabaseReference *ref = [[FIRDatabase database] reference];
             
-            NSString *key = [[ref child:messagesPath] childByAutoId].key;
+            NSString *key = [[ref child:messagesPathKey] childByAutoId].key;
             NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  @"",textKey,
+                                  @"",feedbackTextKey,
                                   self.senderId,userIDKey,
-                                  [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],fileURLKey,nil];
+                                  [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],feedbackFileURLKey,nil];
             
-            NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@/%@",self.senderId,messagesPath,key]]: post,
-                                           [@"/Feedbacks/" stringByAppendingString:[NSString stringWithFormat:@"%@/%@",self.senderId,key]]: post};
+            NSDictionary *childUpdates = @{[NSString stringWithFormat:@"/%@/%@/%@/%@",userPathKey,self.senderId,messagesPathKey,key]: post,
+                                           [NSString stringWithFormat:@"/%@/%@/%@",feedbackPathKey,self.senderId,key]: post};
             
             [ref updateChildValues:childUpdates];
             
@@ -284,6 +269,41 @@
     
 }
 
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - Utility Methods -
+
+
+-(void)observeMessages{
+    FIRDatabaseReference *ref = [[[[[FIRDatabase database] reference] child:userPathKey] child:self.senderId]child:messagesPathKey];
+    [ref keepSynced:YES];
+    [ref observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        NSString *sendID = snapshot.value[userIDKey];
+        NSString *text = snapshot.value[feedbackTextKey];
+        NSString *fileURL = snapshot.value[feedbackFileURLKey];
+        [self addMessage:sendID text:text url:fileURL];
+        [self finishReceivingMessage];
+    }];
+}
+
+-(void)addMessage:(NSString*)sendID text:(NSString*)text url:(NSString*)url{
+    if (url == nil) {
+        JSQMessage *messages = [JSQMessage messageWithSenderId:sendID displayName:@"" text:text];
+        
+        [JSQMessage messageWithSenderId:@"" displayName:@"" text:text];
+        if (_messages == nil) {
+            _messages = [NSMutableArray new];
+        }
+        [_messages addObject:messages];
+    }
+}
+
 - (NSString *)uuid{
     CFUUIDRef uuidRef = CFUUIDCreate(NULL);
     CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
@@ -291,9 +311,9 @@
     return (__bridge_transfer NSString *)uuidStringRef;
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-
+- (IBAction)dismiss:(UIBarButtonItem *)sender {
+    [self.view endEditing:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLocationPickerViewController">
+            <connections>
+                <outlet property="activityIndicator" destination="TEn-pA-Zw8" id="Isw-LI-w80"/>
+                <outlet property="label" destination="9d1-l9-VIT" id="X8J-aw-MSe"/>
+                <outlet property="listTableView" destination="cOm-8D-vzE" id="M2y-zP-dam"/>
+                <outlet property="searchBar" destination="it9-bL-4gL" id="D0b-SE-BVq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="it9-bL-4gL">
+                    <rect key="frame" x="0.0" y="22" width="516" height="44"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="4aG-O3-URE"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cOm-8D-vzE">
+                    <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9AP-lt-Ne8"/>
+                        <outlet property="delegate" destination="-1" id="Fpa-HD-GDw"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d1-l9-VIT">
+                    <rect key="frame" x="300" y="210" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <color key="textColor" white="0.0" alpha="0.54312499999999997" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TEn-pA-Zw8">
+                    <rect key="frame" x="290" y="200" width="20" height="20"/>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-kT-GnF">
+                    <rect key="frame" x="524" y="22" width="76" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="0.0" alpha="0.83568509615384612" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissButtonClicked:" destination="-1" eventType="touchUpInside" id="ai2-OJ-MFc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9d1-l9-VIT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.7" id="44w-vi-LbQ"/>
+                <constraint firstItem="cOm-8D-vzE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Cmb-37-NA7"/>
+                <constraint firstItem="3Yb-kT-GnF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="If1-Q2-6au"/>
+                <constraint firstAttribute="trailing" secondItem="cOm-8D-vzE" secondAttribute="trailing" id="MtE-rN-pEP"/>
+                <constraint firstItem="it9-bL-4gL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="PLg-Ef-wdI"/>
+                <constraint firstItem="3Yb-kT-GnF" firstAttribute="height" secondItem="it9-bL-4gL" secondAttribute="height" id="UFG-qD-Q2E"/>
+                <constraint firstAttribute="trailing" secondItem="3Yb-kT-GnF" secondAttribute="trailing" id="V2T-58-bwr"/>
+                <constraint firstItem="TEn-pA-Zw8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.7" id="YDO-IZ-SUe"/>
+                <constraint firstItem="it9-bL-4gL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="axN-sQ-fZ9"/>
+                <constraint firstItem="TEn-pA-Zw8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ehC-0t-F7e"/>
+                <constraint firstItem="cOm-8D-vzE" firstAttribute="top" secondItem="3Yb-kT-GnF" secondAttribute="bottom" id="gew-Tv-izf"/>
+                <constraint firstItem="9d1-l9-VIT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="omS-yO-yX2"/>
+                <constraint firstAttribute="bottom" secondItem="cOm-8D-vzE" secondAttribute="bottom" id="qVT-bz-KnI"/>
+                <constraint firstItem="3Yb-kT-GnF" firstAttribute="leading" secondItem="it9-bL-4gL" secondAttribute="trailing" constant="8" id="tCf-7z-sZ3"/>
+            </constraints>
+            <point key="canvasLocation" x="633" y="295"/>
+        </view>
+    </objects>
+</document>

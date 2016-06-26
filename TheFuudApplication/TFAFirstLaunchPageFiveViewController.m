@@ -100,7 +100,7 @@
                                       if (error == nil) {
                                           FIRDatabaseReference *ref = [[FIRDatabase database] reference];
                                           NSDictionary *post = @{userIDKey: user.uid,
-                                                                 isAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
+                                                                 userIsAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
                                           NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:user.uid]: post};
                                           [ref updateChildValues:childUpdates];
                                           AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -130,7 +130,7 @@
          if (error == nil) {
              FIRDatabaseReference *ref = [[FIRDatabase database] reference];
              NSDictionary *post = @{userIDKey: user.uid,
-                                    isAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
+                                    userIsAnonymousKey:[NSNumber numberWithBool:user.isAnonymous]};
              NSDictionary *childUpdates = @{[@"/users/" stringByAppendingString:user.uid]: post};
              [ref updateChildValues:childUpdates];
              AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

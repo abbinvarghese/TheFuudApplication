@@ -14,4 +14,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Crash'
 pod 'SDWebImage', '~>3.7'
 pod 'JSQMessagesViewController'
+pod 'AMPopTip'
+pod 'GoogleMaps'
+pod "JTMaterialSwitch"
 end

@@ -14,12 +14,15 @@
 #define IS_IPHONE_6Plus ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )736 ) < DBL_EPSILON )
 
 @interface TFAFirstLaunchPageOneViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fuudLabel;
 @property (weak, nonatomic) IBOutlet UILabel *onLabel;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *xConstrain;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *nextXconstrain;
+
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -89,7 +92,5 @@
     } completion:nil];
     
 }
-
-
 
 @end

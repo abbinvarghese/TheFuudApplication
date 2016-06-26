@@ -10,10 +10,14 @@
 		5C7F1B96DE7FA50D721C73FE /* libPods-TheFuudApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643E4CEF4C4CBC8A6A5FBF7D /* libPods-TheFuudApplication.a */; };
 		ED1A8E471D19125600417477 /* TFAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A8E461D19125600417477 /* TFAConstants.m */; };
 		ED1A8E4B1D19895B00417477 /* TFAManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1A8E4A1D19895B00417477 /* TFAManager.m */; };
+		ED2259591D1D11FE008863D8 /* TFATagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2259571D1D11FE008863D8 /* TFATagTableViewCell.m */; };
+		ED22595A1D1D11FE008863D8 /* TFATagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2259581D1D11FE008863D8 /* TFATagTableViewCell.xib */; };
+		ED22595D1D1D1250008863D8 /* TLTagsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ED22595C1D1D1250008863D8 /* TLTagsControl.m */; };
+		ED2259611D1D2086008863D8 /* TFAWorkingHoursTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED22595F1D1D2086008863D8 /* TFAWorkingHoursTableViewCell.m */; };
+		ED2259621D1D2086008863D8 /* TFAWorkingHoursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2259601D1D2086008863D8 /* TFAWorkingHoursTableViewCell.xib */; };
 		ED2697601D184C6F00CEB79E /* TFAFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */; };
 		ED91D0791D16925400EBE753 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0781D16925400EBE753 /* main.m */; };
 		ED91D07C1D16925400EBE753 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D07B1D16925400EBE753 /* AppDelegate.m */; };
-		ED91D07F1D16925400EBE753 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D07E1D16925400EBE753 /* ViewController.m */; };
 		ED91D0821D16925400EBE753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0801D16925400EBE753 /* Main.storyboard */; };
 		ED91D0841D16925400EBE753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0831D16925400EBE753 /* Assets.xcassets */; };
 		ED91D0871D16925400EBE753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0851D16925400EBE753 /* LaunchScreen.storyboard */; };
@@ -31,8 +35,40 @@
 		ED91D0AC1D17D35600EBE753 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0AB1D17D35600EBE753 /* GoogleService-Info.plist */; };
 		ED91D0B21D17F25C00EBE753 /* TFAAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0B11D17F25C00EBE753 /* TFAAccountViewController.m */; };
 		ED91D0B41D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED91D0B31D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg */; };
-		ED91D0BB1D1811DF00EBE753 /* TFAAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0BA1D1811DF00EBE753 /* TFAAccountTableViewCell.m */; };
 		ED91D0C01D18270500EBE753 /* TFASignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91D0BF1D18270500EBE753 /* TFASignInViewController.m */; };
+		ED9DF0081D1A7B290015F68E /* TFAEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9DF0071D1A7B290015F68E /* TFAEditProfileViewController.m */; };
+		ED9DF00C1D1A91240015F68E /* TFANearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9DF00B1D1A91240015F68E /* TFANearbyViewController.m */; };
+		ED9DF0101D1AABFA0015F68E /* TFANeesfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9DF00F1D1AABFA0015F68E /* TFANeesfeedViewController.m */; };
+		EDC052E71D1ADB6600935912 /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC052E31D1ADB6600935912 /* AAPLCameraViewController.m */; };
+		EDC052E81D1ADB6600935912 /* AAPLCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC052E41D1ADB6600935912 /* AAPLCameraViewController.xib */; };
+		EDC052E91D1ADB6600935912 /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC052E61D1ADB6600935912 /* AAPLPreviewView.m */; };
+		EDC052F61D1ADBF200935912 /* FGalleryViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC052ED1D1ADBF200935912 /* FGalleryViewControllers.m */; };
+		EDC052F71D1ADBF200935912 /* FGalleryViewControllers.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC052EE1D1ADBF200935912 /* FGalleryViewControllers.xib */; };
+		EDC052F81D1ADBF200935912 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC052F01D1ADBF200935912 /* NSIndexSet+Convenience.m */; };
+		EDC052F91D1ADBF200935912 /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC052F21D1ADBF200935912 /* UICollectionView+Convenience.m */; };
+		EDC052FA1D1ADBF200935912 /* AAPLGridViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC052F41D1ADBF200935912 /* AAPLGridViewCell2.m */; };
+		EDC052FB1D1ADBF200935912 /* AAPLGridViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC052F51D1ADBF200935912 /* AAPLGridViewCell2.xib */; };
+		EDDF00DF1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF00DD1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.m */; };
+		EDDF00E01D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF00DE1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.xib */; };
+		EDDF00E41D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF00E21D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.m */; };
+		EDDF00E51D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF00E31D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.xib */; };
+		EDDF00E91D1BC72900BECC8A /* TFADetailsNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF00E71D1BC72900BECC8A /* TFADetailsNameTableViewCell.m */; };
+		EDDF00EA1D1BC72900BECC8A /* TFADetailsNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF00E81D1BC72900BECC8A /* TFADetailsNameTableViewCell.xib */; };
+		EDDF00EE1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF00EC1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.m */; };
+		EDDF00EF1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF00ED1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.xib */; };
+		EDDF00F31D1BE69900BECC8A /* TFADetailsPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF00F11D1BE69900BECC8A /* TFADetailsPriceTableViewCell.m */; };
+		EDDF00F41D1BE69900BECC8A /* TFADetailsPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF00F21D1BE69900BECC8A /* TFADetailsPriceTableViewCell.xib */; };
+		EDDF00F81D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF00F61D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.m */; };
+		EDDF00F91D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF00F71D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.xib */; };
+		EDDF010A1D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF01081D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.m */; };
+		EDDF010B1D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF01091D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.xib */; };
+		EDDF010F1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF010D1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.m */; };
+		EDDF01101D1C036900BECC8A /* TFARestaurentLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF010E1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.xib */; };
+		EDDF01191D1C1F0400BECC8A /* FLocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF01171D1C1F0400BECC8A /* FLocationPickerViewController.m */; };
+		EDDF011A1D1C1F0400BECC8A /* FLocationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF01181D1C1F0400BECC8A /* FLocationPickerViewController.xib */; };
+		EDDF011E1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF011C1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.m */; };
+		EDDF011F1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDDF011D1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.xib */; };
+		EDDF01281D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF01271D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,14 +80,20 @@
 		ED1A8E461D19125600417477 /* TFAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAConstants.m; sourceTree = "<group>"; };
 		ED1A8E491D19895B00417477 /* TFAManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAManager.h; sourceTree = "<group>"; };
 		ED1A8E4A1D19895B00417477 /* TFAManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAManager.m; sourceTree = "<group>"; };
+		ED2259561D1D11FE008863D8 /* TFATagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFATagTableViewCell.h; sourceTree = "<group>"; };
+		ED2259571D1D11FE008863D8 /* TFATagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFATagTableViewCell.m; sourceTree = "<group>"; };
+		ED2259581D1D11FE008863D8 /* TFATagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFATagTableViewCell.xib; sourceTree = "<group>"; };
+		ED22595B1D1D1250008863D8 /* TLTagsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTagsControl.h; sourceTree = "<group>"; };
+		ED22595C1D1D1250008863D8 /* TLTagsControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTagsControl.m; sourceTree = "<group>"; };
+		ED22595E1D1D2086008863D8 /* TFAWorkingHoursTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAWorkingHoursTableViewCell.h; sourceTree = "<group>"; };
+		ED22595F1D1D2086008863D8 /* TFAWorkingHoursTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAWorkingHoursTableViewCell.m; sourceTree = "<group>"; };
+		ED2259601D1D2086008863D8 /* TFAWorkingHoursTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFAWorkingHoursTableViewCell.xib; sourceTree = "<group>"; };
 		ED26975E1D184C6F00CEB79E /* TFAFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAFeedbackViewController.h; sourceTree = "<group>"; };
 		ED26975F1D184C6F00CEB79E /* TFAFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAFeedbackViewController.m; sourceTree = "<group>"; };
 		ED91D0741D16925400EBE753 /* TheFuudApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFuudApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED91D0781D16925400EBE753 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED91D07A1D16925400EBE753 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ED91D07B1D16925400EBE753 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ED91D07D1D16925400EBE753 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ED91D07E1D16925400EBE753 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ED91D0811D16925400EBE753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED91D0831D16925400EBE753 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED91D0861D16925400EBE753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,10 +119,61 @@
 		ED91D0B01D17F25C00EBE753 /* TFAAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAAccountViewController.h; sourceTree = "<group>"; };
 		ED91D0B11D17F25C00EBE753 /* TFAAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAAccountViewController.m; sourceTree = "<group>"; };
 		ED91D0B31D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2015-12-01-30-12187888_10.eba12.jpg"; sourceTree = "<group>"; };
-		ED91D0B91D1811DF00EBE753 /* TFAAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAAccountTableViewCell.h; sourceTree = "<group>"; };
-		ED91D0BA1D1811DF00EBE753 /* TFAAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAAccountTableViewCell.m; sourceTree = "<group>"; };
 		ED91D0BE1D18270500EBE753 /* TFASignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFASignInViewController.h; sourceTree = "<group>"; };
 		ED91D0BF1D18270500EBE753 /* TFASignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFASignInViewController.m; sourceTree = "<group>"; };
+		ED9DF0061D1A7B290015F68E /* TFAEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFAEditProfileViewController.h; sourceTree = "<group>"; };
+		ED9DF0071D1A7B290015F68E /* TFAEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFAEditProfileViewController.m; sourceTree = "<group>"; };
+		ED9DF00A1D1A91240015F68E /* TFANearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFANearbyViewController.h; sourceTree = "<group>"; };
+		ED9DF00B1D1A91240015F68E /* TFANearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFANearbyViewController.m; sourceTree = "<group>"; };
+		ED9DF00E1D1AABFA0015F68E /* TFANeesfeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFANeesfeedViewController.h; sourceTree = "<group>"; };
+		ED9DF00F1D1AABFA0015F68E /* TFANeesfeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFANeesfeedViewController.m; sourceTree = "<group>"; };
+		EDC052E21D1ADB6600935912 /* AAPLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraViewController.h; sourceTree = "<group>"; };
+		EDC052E31D1ADB6600935912 /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
+		EDC052E41D1ADB6600935912 /* AAPLCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AAPLCameraViewController.xib; sourceTree = "<group>"; };
+		EDC052E51D1ADB6600935912 /* AAPLPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPreviewView.h; sourceTree = "<group>"; };
+		EDC052E61D1ADB6600935912 /* AAPLPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPreviewView.m; sourceTree = "<group>"; };
+		EDC052EC1D1ADBF200935912 /* FGalleryViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGalleryViewControllers.h; sourceTree = "<group>"; };
+		EDC052ED1D1ADBF200935912 /* FGalleryViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGalleryViewControllers.m; sourceTree = "<group>"; };
+		EDC052EE1D1ADBF200935912 /* FGalleryViewControllers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FGalleryViewControllers.xib; sourceTree = "<group>"; };
+		EDC052EF1D1ADBF200935912 /* NSIndexSet+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Convenience.h"; sourceTree = "<group>"; };
+		EDC052F01D1ADBF200935912 /* NSIndexSet+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+Convenience.m"; sourceTree = "<group>"; };
+		EDC052F11D1ADBF200935912 /* UICollectionView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Convenience.h"; sourceTree = "<group>"; };
+		EDC052F21D1ADBF200935912 /* UICollectionView+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Convenience.m"; sourceTree = "<group>"; };
+		EDC052F31D1ADBF200935912 /* AAPLGridViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLGridViewCell2.h; sourceTree = "<group>"; };
+		EDC052F41D1ADBF200935912 /* AAPLGridViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLGridViewCell2.m; sourceTree = "<group>"; };
+		EDC052F51D1ADBF200935912 /* AAPLGridViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AAPLGridViewCell2.xib; sourceTree = "<group>"; };
+		EDDF00DC1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFADetailsImagePreviewTableViewCell.h; sourceTree = "<group>"; };
+		EDDF00DD1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFADetailsImagePreviewTableViewCell.m; sourceTree = "<group>"; };
+		EDDF00DE1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFADetailsImagePreviewTableViewCell.xib; sourceTree = "<group>"; };
+		EDDF00E11D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFADetailsImagePreviewCollectionViewCell.h; sourceTree = "<group>"; };
+		EDDF00E21D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFADetailsImagePreviewCollectionViewCell.m; sourceTree = "<group>"; };
+		EDDF00E31D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFADetailsImagePreviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		EDDF00E61D1BC72900BECC8A /* TFADetailsNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFADetailsNameTableViewCell.h; sourceTree = "<group>"; };
+		EDDF00E71D1BC72900BECC8A /* TFADetailsNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFADetailsNameTableViewCell.m; sourceTree = "<group>"; };
+		EDDF00E81D1BC72900BECC8A /* TFADetailsNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFADetailsNameTableViewCell.xib; sourceTree = "<group>"; };
+		EDDF00EB1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFANameAndPriceTableViewController.h; sourceTree = "<group>"; };
+		EDDF00EC1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFANameAndPriceTableViewController.m; sourceTree = "<group>"; };
+		EDDF00ED1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFANameAndPriceTableViewController.xib; sourceTree = "<group>"; };
+		EDDF00F01D1BE69900BECC8A /* TFADetailsPriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFADetailsPriceTableViewCell.h; sourceTree = "<group>"; };
+		EDDF00F11D1BE69900BECC8A /* TFADetailsPriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFADetailsPriceTableViewCell.m; sourceTree = "<group>"; };
+		EDDF00F21D1BE69900BECC8A /* TFADetailsPriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFADetailsPriceTableViewCell.xib; sourceTree = "<group>"; };
+		EDDF00F51D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFADetailsDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		EDDF00F61D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFADetailsDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		EDDF00F71D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFADetailsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		EDDF01071D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFARestaurentDetailsTableViewController.h; sourceTree = "<group>"; };
+		EDDF01081D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFARestaurentDetailsTableViewController.m; sourceTree = "<group>"; };
+		EDDF01091D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFARestaurentDetailsTableViewController.xib; sourceTree = "<group>"; };
+		EDDF010C1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFARestaurentLocationTableViewCell.h; sourceTree = "<group>"; };
+		EDDF010D1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFARestaurentLocationTableViewCell.m; sourceTree = "<group>"; };
+		EDDF010E1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFARestaurentLocationTableViewCell.xib; sourceTree = "<group>"; };
+		EDDF01161D1C1F0400BECC8A /* FLocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLocationPickerViewController.h; sourceTree = "<group>"; };
+		EDDF01171D1C1F0400BECC8A /* FLocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLocationPickerViewController.m; sourceTree = "<group>"; };
+		EDDF01181D1C1F0400BECC8A /* FLocationPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLocationPickerViewController.xib; sourceTree = "<group>"; };
+		EDDF011B1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFACurrentLocationTableViewCell.h; sourceTree = "<group>"; };
+		EDDF011C1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFACurrentLocationTableViewCell.m; sourceTree = "<group>"; };
+		EDDF011D1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFACurrentLocationTableViewCell.xib; sourceTree = "<group>"; };
+		EDDF01261D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TFALocation.h"; sourceTree = "<group>"; };
+		EDDF01271D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TFALocation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +220,24 @@
 			name = Modals;
 			sourceTree = "<group>";
 		};
+		ED2259691D1E50E0008863D8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF010C1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.h */,
+				EDDF010D1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.m */,
+				EDDF010E1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.xib */,
+				ED2259561D1D11FE008863D8 /* TFATagTableViewCell.h */,
+				ED2259571D1D11FE008863D8 /* TFATagTableViewCell.m */,
+				ED2259581D1D11FE008863D8 /* TFATagTableViewCell.xib */,
+				ED22595B1D1D1250008863D8 /* TLTagsControl.h */,
+				ED22595C1D1D1250008863D8 /* TLTagsControl.m */,
+				ED22595E1D1D2086008863D8 /* TFAWorkingHoursTableViewCell.h */,
+				ED22595F1D1D2086008863D8 /* TFAWorkingHoursTableViewCell.m */,
+				ED2259601D1D2086008863D8 /* TFAWorkingHoursTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		ED26975D1D184C5600CEB79E /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +268,15 @@
 		ED91D0761D16925400EBE753 /* TheFuudApplication */ = {
 			isa = PBXGroup;
 			children = (
+				EDDF01291D1C403E00BECC8A /* Location Picker */,
+				ED9DF0531D1AAE400015F68E /* Add */,
+				ED9DF00D1D1AABEC0015F68E /* Newsfeed */,
+				ED9DF0091D1A91040015F68E /* Nearby */,
 				ED1A8E481D19894200417477 /* Modals */,
 				ED91D0AF1D17F23800EBE753 /* Account */,
 				ED91D0AD1D17F1F200EBE753 /* FirstLaunch */,
 				ED91D07A1D16925400EBE753 /* AppDelegate.h */,
 				ED91D07B1D16925400EBE753 /* AppDelegate.m */,
-				ED91D07D1D16925400EBE753 /* ViewController.h */,
-				ED91D07E1D16925400EBE753 /* ViewController.m */,
 				ED91D0801D16925400EBE753 /* Main.storyboard */,
 				ED91D08E1D16ACBB00EBE753 /* Initial.storyboard */,
 				ED91D0831D16925400EBE753 /* Assets.xcassets */,
@@ -220,20 +333,11 @@
 			children = (
 				ED91D0B01D17F25C00EBE753 /* TFAAccountViewController.h */,
 				ED91D0B11D17F25C00EBE753 /* TFAAccountViewController.m */,
+				ED9DF0051D1A7B060015F68E /* Edit profile */,
 				ED26975D1D184C5600CEB79E /* Feedback */,
 				ED91D0BD1D1826DC00EBE753 /* Sign In */,
-				ED91D0BC1D18131300EBE753 /* Cell */,
 			);
 			name = Account;
-			sourceTree = "<group>";
-		};
-		ED91D0BC1D18131300EBE753 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				ED91D0B91D1811DF00EBE753 /* TFAAccountTableViewCell.h */,
-				ED91D0BA1D1811DF00EBE753 /* TFAAccountTableViewCell.m */,
-			);
-			name = Cell;
 			sourceTree = "<group>";
 		};
 		ED91D0BD1D1826DC00EBE753 /* Sign In */ = {
@@ -243,6 +347,132 @@
 				ED91D0BF1D18270500EBE753 /* TFASignInViewController.m */,
 			);
 			name = "Sign In";
+			sourceTree = "<group>";
+		};
+		ED9DF0051D1A7B060015F68E /* Edit profile */ = {
+			isa = PBXGroup;
+			children = (
+				ED9DF0061D1A7B290015F68E /* TFAEditProfileViewController.h */,
+				ED9DF0071D1A7B290015F68E /* TFAEditProfileViewController.m */,
+			);
+			name = "Edit profile";
+			sourceTree = "<group>";
+		};
+		ED9DF0091D1A91040015F68E /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+				ED9DF00A1D1A91240015F68E /* TFANearbyViewController.h */,
+				ED9DF00B1D1A91240015F68E /* TFANearbyViewController.m */,
+			);
+			name = Nearby;
+			sourceTree = "<group>";
+		};
+		ED9DF00D1D1AABEC0015F68E /* Newsfeed */ = {
+			isa = PBXGroup;
+			children = (
+				ED9DF00E1D1AABFA0015F68E /* TFANeesfeedViewController.h */,
+				ED9DF00F1D1AABFA0015F68E /* TFANeesfeedViewController.m */,
+			);
+			name = Newsfeed;
+			sourceTree = "<group>";
+		};
+		ED9DF0531D1AAE400015F68E /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF00FC1D1BF6C700BECC8A /* Restaurent Details */,
+				EDDF00FB1D1BF32C00BECC8A /* Name And Price */,
+				EDC052EB1D1ADBE100935912 /* Gallery */,
+				EDC052E11D1ADB5C00935912 /* Camera */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		EDC052E11D1ADB5C00935912 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				EDC052E21D1ADB6600935912 /* AAPLCameraViewController.h */,
+				EDC052E31D1ADB6600935912 /* AAPLCameraViewController.m */,
+				EDC052E41D1ADB6600935912 /* AAPLCameraViewController.xib */,
+				EDC052E51D1ADB6600935912 /* AAPLPreviewView.h */,
+				EDC052E61D1ADB6600935912 /* AAPLPreviewView.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		EDC052EB1D1ADBE100935912 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				EDC052EC1D1ADBF200935912 /* FGalleryViewControllers.h */,
+				EDC052ED1D1ADBF200935912 /* FGalleryViewControllers.m */,
+				EDC052EE1D1ADBF200935912 /* FGalleryViewControllers.xib */,
+				EDC052EF1D1ADBF200935912 /* NSIndexSet+Convenience.h */,
+				EDC052F01D1ADBF200935912 /* NSIndexSet+Convenience.m */,
+				EDC052F11D1ADBF200935912 /* UICollectionView+Convenience.h */,
+				EDC052F21D1ADBF200935912 /* UICollectionView+Convenience.m */,
+				EDC052F31D1ADBF200935912 /* AAPLGridViewCell2.h */,
+				EDC052F41D1ADBF200935912 /* AAPLGridViewCell2.m */,
+				EDC052F51D1ADBF200935912 /* AAPLGridViewCell2.xib */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
+		EDDF00FA1D1BF32200BECC8A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF00DC1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.h */,
+				EDDF00DD1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.m */,
+				EDDF00DE1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.xib */,
+				EDDF00E11D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.h */,
+				EDDF00E21D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.m */,
+				EDDF00E31D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.xib */,
+				EDDF00E61D1BC72900BECC8A /* TFADetailsNameTableViewCell.h */,
+				EDDF00E71D1BC72900BECC8A /* TFADetailsNameTableViewCell.m */,
+				EDDF00E81D1BC72900BECC8A /* TFADetailsNameTableViewCell.xib */,
+				EDDF00F01D1BE69900BECC8A /* TFADetailsPriceTableViewCell.h */,
+				EDDF00F11D1BE69900BECC8A /* TFADetailsPriceTableViewCell.m */,
+				EDDF00F21D1BE69900BECC8A /* TFADetailsPriceTableViewCell.xib */,
+				EDDF00F51D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.h */,
+				EDDF00F61D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.m */,
+				EDDF00F71D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		EDDF00FB1D1BF32C00BECC8A /* Name And Price */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF00EB1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.h */,
+				EDDF00EC1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.m */,
+				EDDF00ED1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.xib */,
+				EDDF00FA1D1BF32200BECC8A /* Cell */,
+			);
+			name = "Name And Price";
+			sourceTree = "<group>";
+		};
+		EDDF00FC1D1BF6C700BECC8A /* Restaurent Details */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF01071D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.h */,
+				EDDF01081D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.m */,
+				EDDF01091D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.xib */,
+				ED2259691D1E50E0008863D8 /* Cell */,
+			);
+			name = "Restaurent Details";
+			sourceTree = "<group>";
+		};
+		EDDF01291D1C403E00BECC8A /* Location Picker */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF01161D1C1F0400BECC8A /* FLocationPickerViewController.h */,
+				EDDF01171D1C1F0400BECC8A /* FLocationPickerViewController.m */,
+				EDDF01181D1C1F0400BECC8A /* FLocationPickerViewController.xib */,
+				EDDF011B1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.h */,
+				EDDF011C1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.m */,
+				EDDF011D1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.xib */,
+				EDDF01261D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.h */,
+				EDDF01271D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.m */,
+			);
+			name = "Location Picker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,12 +538,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED91D0871D16925400EBE753 /* LaunchScreen.storyboard in Resources */,
+				EDDF01101D1C036900BECC8A /* TFARestaurentLocationTableViewCell.xib in Resources */,
+				EDDF010B1D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.xib in Resources */,
+				EDDF00EA1D1BC72900BECC8A /* TFADetailsNameTableViewCell.xib in Resources */,
+				EDDF00E01D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.xib in Resources */,
+				EDC052F71D1ADBF200935912 /* FGalleryViewControllers.xib in Resources */,
 				ED91D0841D16925400EBE753 /* Assets.xcassets in Resources */,
+				EDDF00F41D1BE69900BECC8A /* TFADetailsPriceTableViewCell.xib in Resources */,
+				EDDF00EF1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.xib in Resources */,
 				ED91D0B41D17F8C300EBE753 /* 2015-12-01-30-12187888_10.eba12.jpg in Resources */,
+				EDDF00E51D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.xib in Resources */,
+				EDC052E81D1ADB6600935912 /* AAPLCameraViewController.xib in Resources */,
+				EDC052FB1D1ADBF200935912 /* AAPLGridViewCell2.xib in Resources */,
 				ED91D0821D16925400EBE753 /* Main.storyboard in Resources */,
 				ED91D0A01D16B67100EBE753 /* IMG_0101.mp4 in Resources */,
 				ED91D08F1D16ACBB00EBE753 /* Initial.storyboard in Resources */,
+				ED2259621D1D2086008863D8 /* TFAWorkingHoursTableViewCell.xib in Resources */,
 				ED91D0AC1D17D35600EBE753 /* GoogleService-Info.plist in Resources */,
+				EDDF011A1D1C1F0400BECC8A /* FLocationPickerViewController.xib in Resources */,
+				EDDF011F1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.xib in Resources */,
+				EDDF00F91D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.xib in Resources */,
+				ED22595A1D1D11FE008863D8 /* TFATagTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,19 +632,40 @@
 			files = (
 				ED91D09B1D16B41F00EBE753 /* TFAFirstLaunchPageThreeViewController.m in Sources */,
 				ED91D0981D16B41300EBE753 /* TFAFirstLaunchPageTwoViewController.m in Sources */,
-				ED91D07F1D16925400EBE753 /* ViewController.m in Sources */,
+				EDDF011E1D1C25A800BECC8A /* TFACurrentLocationTableViewCell.m in Sources */,
 				ED91D0A31D16D3EF00EBE753 /* TFAFirstLaunchPageFiveViewController.m in Sources */,
+				EDDF00E41D1BC0FB00BECC8A /* TFADetailsImagePreviewCollectionViewCell.m in Sources */,
 				ED1A8E4B1D19895B00417477 /* TFAManager.m in Sources */,
-				ED91D0BB1D1811DF00EBE753 /* TFAAccountTableViewCell.m in Sources */,
+				EDC052F81D1ADBF200935912 /* NSIndexSet+Convenience.m in Sources */,
+				EDC052FA1D1ADBF200935912 /* AAPLGridViewCell2.m in Sources */,
 				ED2697601D184C6F00CEB79E /* TFAFeedbackViewController.m in Sources */,
+				EDDF010A1D1BFAF600BECC8A /* TFARestaurentDetailsTableViewController.m in Sources */,
 				ED91D07C1D16925400EBE753 /* AppDelegate.m in Sources */,
 				ED1A8E471D19125600417477 /* TFAConstants.m in Sources */,
+				EDDF00DF1D1BB86F00BECC8A /* TFADetailsImagePreviewTableViewCell.m in Sources */,
 				ED91D0C01D18270500EBE753 /* TFASignInViewController.m in Sources */,
 				ED91D0951D16B2DC00EBE753 /* TFAFirstLaunchPageOneViewController.m in Sources */,
+				ED9DF0101D1AABFA0015F68E /* TFANeesfeedViewController.m in Sources */,
 				ED91D0B21D17F25C00EBE753 /* TFAAccountViewController.m in Sources */,
 				ED91D0921D16AE4100EBE753 /* TFAFirstLaunchViewController.m in Sources */,
+				EDDF00E91D1BC72900BECC8A /* TFADetailsNameTableViewCell.m in Sources */,
+				ED9DF0081D1A7B290015F68E /* TFAEditProfileViewController.m in Sources */,
+				EDDF00F31D1BE69900BECC8A /* TFADetailsPriceTableViewCell.m in Sources */,
+				EDDF00F81D1BEBFB00BECC8A /* TFADetailsDescriptionTableViewCell.m in Sources */,
+				EDDF01281D1C3F2000BECC8A /* NSMutableDictionary+TFALocation.m in Sources */,
+				EDDF01191D1C1F0400BECC8A /* FLocationPickerViewController.m in Sources */,
+				EDDF010F1D1C036900BECC8A /* TFARestaurentLocationTableViewCell.m in Sources */,
+				ED22595D1D1D1250008863D8 /* TLTagsControl.m in Sources */,
+				EDC052F61D1ADBF200935912 /* FGalleryViewControllers.m in Sources */,
+				ED2259591D1D11FE008863D8 /* TFATagTableViewCell.m in Sources */,
 				ED91D0791D16925400EBE753 /* main.m in Sources */,
+				EDC052F91D1ADBF200935912 /* UICollectionView+Convenience.m in Sources */,
 				ED91D09E1D16B42B00EBE753 /* TFAFirstLaunchPageFourViewController.m in Sources */,
+				EDC052E71D1ADB6600935912 /* AAPLCameraViewController.m in Sources */,
+				ED9DF00C1D1A91240015F68E /* TFANearbyViewController.m in Sources */,
+				ED2259611D1D2086008863D8 /* TFAWorkingHoursTableViewCell.m in Sources */,
+				EDDF00EE1D1BD5E500BECC8A /* TFANameAndPriceTableViewController.m in Sources */,
+				EDC052E91D1ADB6600935912 /* AAPLPreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

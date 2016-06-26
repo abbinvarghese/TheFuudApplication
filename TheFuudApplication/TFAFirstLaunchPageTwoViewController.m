@@ -9,6 +9,7 @@
 #import "TFAFirstLaunchPageTwoViewController.h"
 
 @interface TFAFirstLaunchPageTwoViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *xConstrain;
 
@@ -18,20 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     int height = [UIScreen mainScreen].bounds.size.height/2;
     int width = (height*125)/667;
-    UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-width,
-                                                                          [UIScreen mainScreen].bounds.size.height/8,
-                                                                          width,
-                                                                          height)];
+    UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-width, [UIScreen mainScreen].bounds.size.height/8, width, height)];
     imageview.backgroundColor = [UIColor lightTextColor];
-    
-    
     CAShapeLayer * maskLayer = [CAShapeLayer layer];
     maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: imageview.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerBottomLeft cornerRadii: (CGSize){10.0, 10.0}].CGPath;
-    
     imageview.layer.mask = maskLayer;
-    
     [self.view addSubview:imageview];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
