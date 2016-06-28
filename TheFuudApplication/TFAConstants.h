@@ -30,6 +30,8 @@ FOUNDATION_EXPORT NSString *const fuudPriceKey;
 FOUNDATION_EXPORT NSString *const fuudRatingKey;
 FOUNDATION_EXPORT NSString *const fuudRestaurentKey;
 FOUNDATION_EXPORT NSString *const fuudImageKey;
+FOUNDATION_EXPORT NSString *const fuudLatitudeKey;
+FOUNDATION_EXPORT NSString *const fuudLongitudeKey;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

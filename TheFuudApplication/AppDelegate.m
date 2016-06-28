@@ -34,22 +34,19 @@
     
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
-    [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
-                                                    FIRUser *_Nullable user) {
-        if (user != nil) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UITabBarController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
-            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-            self.window.rootViewController = rootViewController;
-            [self.window makeKeyAndVisible];
-        } else {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];
-            TFAFirstLaunchViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TFAFirstLaunchViewController"];
-            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-            self.window.rootViewController = rootViewController;
-            [self.window makeKeyAndVisible];
-        }
-    }];
+    if ([FIRAuth auth].currentUser != nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UITabBarController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    } else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];
+        TFAFirstLaunchViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TFAFirstLaunchViewController"];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    }
     
     return YES;
 }
@@ -59,7 +56,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
     self.window.rootViewController = rootViewController;
-
+    
 }
 
 -(void)switchToSignUp{

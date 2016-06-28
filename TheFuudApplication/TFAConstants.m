@@ -30,6 +30,8 @@ NSString *const fuudPriceKey                    = @"fuudPrice";
 NSString *const fuudRatingKey                   = @"fuudRating";
 NSString *const fuudRestaurentKey               = @"fuudRestaurent";
 NSString *const fuudImageKey                    = @"fuudImage";
+NSString *const fuudLatitudeKey                 = @"fuudLatitude";
+NSString *const fuudLongitudeKey                = @"fuudLongitude";
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,11 +61,11 @@ NSString *const feedbackFileURLKey              = @"feedbackFileURL";
 
 #pragma mark - Database Path Keys -
 
-NSString *const fuudPathKey                     = @"fuud";
+NSString *const fuudPathKey                     = @"fuuds";
 NSString *const storagePathKey                  = @"gs://thefuudapplication.appspot.com/";
-NSString *const userPathKey                     = @"user";
+NSString *const userPathKey                     = @"users";
 NSString *const messagesPathKey                 = @"messages";
-NSString *const feedbackPathKey                 = @"feedback";
+NSString *const feedbackPathKey                 = @"feedbacks";
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

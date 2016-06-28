@@ -104,7 +104,7 @@
         }];
         
         [uploadTask observeStatus:FIRStorageTaskStatusSuccess handler:^(FIRStorageTaskSnapshot *snapshot) {
-            if (images[1]) {
+            if (images.count>1) {
                 FIRStorageReference *storageRef2 = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@item_images/%@%@/%@.jpg",storagePathKey,myYearString,myMonthString,[self uuid]]];
                 FIRStorageUploadTask *uploadTask2 = [storageRef2 putData:UIImageJPEGRepresentation(images[1], 0.5) metadata:metadata];
                 
@@ -138,7 +138,7 @@
                 }];
                 
                 [uploadTask2 observeStatus:FIRStorageTaskStatusSuccess handler:^(FIRStorageTaskSnapshot *snapshot2) {
-                    if (images[2]) {
+                    if (images.count>2) {
                         FIRStorageReference *storageRef3 = [[FIRStorage storage] referenceForURL:[NSString stringWithFormat:@"%@item_images/%@%@/%@.jpg",storagePathKey,myYearString,myMonthString,[self uuid]]];
                         FIRStorageUploadTask *uploadTask3 = [storageRef3 putData:UIImageJPEGRepresentation(images[2], 0.5) metadata:metadata];
                         
@@ -177,32 +177,84 @@
                             
                             NSString *key = [[ref child:fuudPathKey] childByAutoId].key;
                             
-                            NSDictionary *rest = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                  restaurantName,restaurantNameKey,
-                                                  location,restaurantlocationKey,
-                                                  phoneNumbers,restaurantPhoneNumberKey,
-                                                  workingFrom,restaurantWorkingFromKey,
-                                                  workingTill,restaurantWorkingTillKey, nil];
+                            NSMutableDictionary *rest = [[NSMutableDictionary alloc]init];
+                            [rest setObject:restaurantName forKey:restaurantNameKey];
+                            [rest setObject:location forKey:restaurantlocationKey];
+                            if (phoneNumbers.count>0 && phoneNumbers != nil) {
+                                [rest setObject:phoneNumbers forKey:restaurantPhoneNumberKey];
+                            }
+                            if (workingFrom.length>0) {
+                                [rest setObject:workingFrom forKey:restaurantWorkingFromKey];
+                            }
+                            if (workingTill.length>0) {
+                                [rest setObject:workingTill forKey:restaurantWorkingTillKey];
+                            }
                             
                             NSArray *imageArray = [NSArray arrayWithObjects:
                                                    [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],
                                                    [NSString stringWithFormat:@"%@",snapshot2.metadata.downloadURL],
                                                    [NSString stringWithFormat:@"%@",snapshot3.metadata.downloadURL],nil];
                             
-                            NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                  name,fuudTitleKey,
-                                                  [NSNumber numberWithDouble:[price doubleValue]],fuudPriceKey,
-                                                  description,fuudDescriptionKey,
-                                                  rest,fuudRestaurentKey,
-                                                  imageArray,fuudImageKey, nil];
+                            NSMutableDictionary *item = [[NSMutableDictionary alloc]init];
+                            [item setObject:name forKey:fuudTitleKey];
+                            [item setObject:[NSNumber numberWithDouble:[price doubleValue]] forKey:fuudPriceKey];
+                            [item setObject:rest forKey:fuudRestaurentKey];
+                            [item setObject:imageArray forKey:fuudImageKey];
                             
-                            NSDictionary *childUpdates = @{[@"/items/" stringByAppendingString:key]: item};
+                            if (description.length>0) {
+                                [item setObject:description forKey:fuudDescriptionKey];
+                            }
+                            [item setObject:location[locationLatitudeKey] forKey:fuudLatitudeKey];
+                            [item setObject:location[locationLongitudeKey] forKey:fuudLongitudeKey];
+                            
+                            NSDictionary *childUpdates = @{[NSString stringWithFormat:@"/%@/%@",fuudPathKey,key]:item};
                             
                             [ref updateChildValues:childUpdates];
                             
                             NSLog(@"All Uploads Finished");
                             
                         }];
+                    }
+                    else{
+                        FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+                        
+                        NSString *key = [[ref child:fuudPathKey] childByAutoId].key;
+                        
+                        NSMutableDictionary *rest = [[NSMutableDictionary alloc]init];
+                        [rest setObject:restaurantName forKey:restaurantNameKey];
+                        [rest setObject:location forKey:restaurantlocationKey];
+                        if (phoneNumbers.count>0 && phoneNumbers != nil) {
+                            [rest setObject:phoneNumbers forKey:restaurantPhoneNumberKey];
+                        }
+                        if (workingFrom.length>0) {
+                            [rest setObject:workingFrom forKey:restaurantWorkingFromKey];
+                        }
+                        if (workingTill.length>0) {
+                            [rest setObject:workingTill forKey:restaurantWorkingTillKey];
+                        }
+                        
+                        NSArray *imageArray = [NSArray arrayWithObjects:
+                                               [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],
+                                               [NSString stringWithFormat:@"%@",snapshot2.metadata.downloadURL], nil];
+                        
+                        NSMutableDictionary *item = [[NSMutableDictionary alloc]init];
+                        [item setObject:name forKey:fuudTitleKey];
+                        [item setObject:[NSNumber numberWithDouble:[price doubleValue]] forKey:fuudPriceKey];
+                        [item setObject:rest forKey:fuudRestaurentKey];
+                        [item setObject:imageArray forKey:fuudImageKey];
+                        
+                        if (description.length>0) {
+                            [item setObject:description forKey:fuudDescriptionKey];
+                        }
+                        [item setObject:location[locationLatitudeKey] forKey:fuudLatitudeKey];
+                        [item setObject:location[locationLongitudeKey] forKey:fuudLongitudeKey];
+                        
+                        NSDictionary *childUpdates = @{[NSString stringWithFormat:@"/%@/%@",fuudPathKey,key]:item};
+                        
+                        [ref updateChildValues:childUpdates];
+                        
+                        NSLog(@"All Uploads Finished");
+
                     }
                 }];
                 
@@ -212,24 +264,35 @@
                 
                 NSString *key = [[ref child:fuudPathKey] childByAutoId].key;
                 
-                NSDictionary *rest = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      restaurantName,restaurantNameKey,
-                                      location,restaurantlocationKey,
-                                      phoneNumbers,restaurantPhoneNumberKey,
-                                      workingFrom,restaurantWorkingFromKey,
-                                      workingTill,restaurantWorkingTillKey, nil];
+                NSMutableDictionary *rest = [[NSMutableDictionary alloc]init];
+                [rest setObject:restaurantName forKey:restaurantNameKey];
+                [rest setObject:location forKey:restaurantlocationKey];
+                if (phoneNumbers.count>0 && phoneNumbers != nil) {
+                    [rest setObject:phoneNumbers forKey:restaurantPhoneNumberKey];
+                }
+                if (workingFrom.length>0) {
+                    [rest setObject:workingFrom forKey:restaurantWorkingFromKey];
+                }
+                if (workingTill.length>0) {
+                    [rest setObject:workingTill forKey:restaurantWorkingTillKey];
+                }
                 
                 NSArray *imageArray = [NSArray arrayWithObjects:
-                                       snapshot.metadata.downloadURL,nil];
+                                       [NSString stringWithFormat:@"%@",snapshot.metadata.downloadURL],nil];
                 
-                NSDictionary *post = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      name,fuudTitleKey,
-                                      [NSNumber numberWithDouble:[price doubleValue]],fuudPriceKey,
-                                      description,fuudDescriptionKey,
-                                      rest,fuudRestaurentKey,
-                                      imageArray,fuudImageKey, nil];
+                NSMutableDictionary *item = [[NSMutableDictionary alloc]init];
+                [item setObject:name forKey:fuudTitleKey];
+                [item setObject:[NSNumber numberWithDouble:[price doubleValue]] forKey:fuudPriceKey];
+                [item setObject:rest forKey:fuudRestaurentKey];
+                [item setObject:imageArray forKey:fuudImageKey];
                 
-                NSDictionary *childUpdates = @{[@"/items/" stringByAppendingString:key]: post};
+                if (description.length>0) {
+                    [item setObject:description forKey:fuudDescriptionKey];
+                }
+                [item setObject:location[locationLatitudeKey] forKey:fuudLatitudeKey];
+                [item setObject:location[locationLongitudeKey] forKey:fuudLongitudeKey];
+                
+                NSDictionary *childUpdates = @{[NSString stringWithFormat:@"/%@/%@",fuudPathKey,key]:item};
                 
                 [ref updateChildValues:childUpdates];
                 

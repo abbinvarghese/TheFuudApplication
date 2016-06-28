@@ -217,9 +217,16 @@
         [[cell.cellImageView layer] addAnimation:animation forKey:@"position"];
     }
     if (_restaurantName.length>0 && _restaurantLocation) {
-        [self dismissViewControllerAnimated:YES completion:^{
-            [TFAManager saveItemName:_dishName price:_dishPrice description:_dishDescription images:_selectedImage restaurantName:_restaurantName location:_restaurantLocation phoneNumbers:_restaurantPhoneNumber woringFrom:_restaurantWoringFrom workingTill:_restaurantWoringTill];
+        
+        [TFAManager saveItemName:_dishName price:_dishPrice description:_dishDescription images:_selectedImage restaurantName:_restaurantName location:_restaurantLocation phoneNumbers:_restaurantPhoneNumber woringFrom:_restaurantWoringFrom workingTill:_restaurantWoringTill];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Thank you!" message:@"Your FUUD is being uploaded in the background. You can continue to browse" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
         }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        
     }
 }
 @end
